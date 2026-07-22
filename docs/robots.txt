@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bannisterderik-tech.github.io/george-winters-website/sitemap.xml
