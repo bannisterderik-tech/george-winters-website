@@ -128,7 +128,7 @@ ${crumbs([{ label: 'Areas' }])}
     <a class="tile photo-tile" href="${url(`/areas/${a.slug}/`)}">
       <img src="${url(a.img)}" alt="${esc(a.imgAlt)}" loading="lazy" width="640" height="480">
       <div class="veil"></div>
-      <div class="label"><span>${esc(a.kicker)}</span><h3>${esc(a.name)}</h3></a>
+      <div class="label"><span>${esc(a.kicker)}</span><h3>${esc(a.name)}</h3></div>
     </a>`).join('')}
   </div>
 </div></section>`, [crumbSchema([{ label: 'Areas', href: '/areas/' }])]))
