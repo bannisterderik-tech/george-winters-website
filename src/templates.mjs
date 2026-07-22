@@ -144,7 +144,11 @@ export function shell(page, bodyHtml, schemas = []) {
 </head>
 <body>
 <header class="site-head"><div class="wrap bar">
-  <a class="logo" href="${url('/')}" aria-label="George Winters — home"><img src="${url('/assets/img/tog-logo-real-dark.png')}" alt="The Operative Group | Real" width="220" height="46"></a>
+  <a class="logo" href="${url('/')}" aria-label="George Winters — home">
+    <img class="logo-face" src="${url('/assets/img/george.jpg')}" alt="" width="42" height="42">
+    <span class="logo-name">George Winters</span>
+    <span class="logo-brand">· Real Broker</span>
+  </a>
   <nav aria-label="Main">${navHtml}<a class="head-call" href="${AGENT.phoneHref}">${AGENT.phone}</a></nav>
 </div></header>
 <main id="main">

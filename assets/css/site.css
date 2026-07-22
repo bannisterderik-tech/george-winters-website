@@ -101,7 +101,11 @@ h3 { font-size: clamp(1.22rem, 2.2vw, 1.55rem); margin: 0 0 .45em; }
 /* ---------- header ---------- */
 .site-head { border-bottom: 1px solid var(--hairline); background: color-mix(in srgb, var(--paper) 88%, transparent); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 50; }
 .site-head .bar { display: flex; align-items: center; gap: 1.5rem; padding-block: .78rem; }
-.site-head .logo img { height: 34px; width: auto; }
+.site-head .logo { display: inline-flex; align-items: center; gap: .65rem; text-decoration: none; color: inherit; }
+.site-head .logo-face { width: 42px; height: 42px; border-radius: 999px; object-fit: cover; object-position: top; border: 2px solid var(--green); background: #fff; }
+.site-head .logo-name { font-family: var(--font-display); font-weight: 600; font-size: 1.28rem; letter-spacing: -0.01em; color: var(--ink); white-space: nowrap; }
+.site-head .logo-brand { font-family: var(--font-ui); font-weight: 600; font-size: .7rem; letter-spacing: .18em; text-transform: uppercase; color: var(--ink-faint); white-space: nowrap; }
+@media (max-width: 640px) { .site-head .logo-brand { display: none; } }
 .site-head nav { margin-left: auto; display: flex; gap: 1.35rem; align-items: center; flex-wrap: wrap; }
 .site-head nav a {
   font-family: var(--font-ui); font-size: .92rem; font-weight: 500; color: var(--ink-soft);
