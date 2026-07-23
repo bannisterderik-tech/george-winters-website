@@ -541,6 +541,136 @@ ${crumbs([{ label: 'Photo credits' }])}
 </div>`, []))
 }
 
+// ============================================================ LEGAL PAGES
+function legalPage(p, sections) {
+  const trail = [{ label: p.crumb }]
+  emit(p.path, shell(p, `
+${crumbs(trail)}
+<div class="wrap page-head">
+  <span class="kicker">${esc(p.kicker)}</span>
+  <h1>${esc(p.h1)}</h1>
+  <p class="lede">${esc(p.lede)}</p>
+  <p class="small-caps-note">Effective date: July 2026 · Contact: <a href="mailto:${AGENT.email}">${AGENT.email}</a> · ${AGENT.phone}</p>
+</div>
+<section class="band" style="padding-top:0"><div class="wrap prose">
+  ${sections.map((s) => `<h2>${esc(s.h)}</h2>${s.body.map((x) => `<p>${x}</p>`).join('')}${s.list ? `<ul>${s.list.map((i) => `<li>${i}</li>`).join('')}</ul>` : ''}`).join('')}
+  <p class="small-caps-note" style="margin-top:2.5rem">This page is provided for transparency and general information; it is not legal advice. Questions or requests: <a href="mailto:${AGENT.email}">${AGENT.email}</a> or ${AGENT.phone}.</p>
+</div></section>`, [crumbSchema(trail)]))
+}
+
+function buildLegal() {
+  legalPage({
+    path: '/terms/', crumb: 'Terms of Service', kicker: 'Legal', h1: 'Terms of Service',
+    title: 'Terms of Service | George Winters — McKenzie River Valley Real Estate',
+    description: 'Terms of service for georgewinters McKenzie Valley real estate website: informational use, no professional advice, intellectual property, and limitations.',
+    lede: 'The short version: this site is informational, its guidance is general, and your specific situation deserves a real conversation.',
+  }, [
+    { h: 'Acceptance of these terms', body: [
+      `By using this website, you agree to these terms. The site is operated by ${AGENT.name}, a real estate licensee with The Operative Group, brokered by Real Broker, LLC (${AGENT.license}). If you do not agree with these terms, please do not use the site.`] },
+    { h: 'Informational purpose — not professional advice', body: [
+      'Everything on this site — area guides, field guides, FAQs, and commentary — is general information about the McKenzie River Valley and rural real estate practices. It is not legal, financial, tax, insurance, engineering, or survey advice, and it is not advice about any specific property or transaction.',
+      'Regulations, programs, market conditions, and property facts change. Content is written in good faith and may become outdated; always verify current details with the relevant authority (county planning, FEMA, lenders, the State of Oregon) and consult qualified professionals for your situation. Nothing here creates an agency relationship — that is formed only through a written agreement.'] },
+    { h: 'No guarantees', body: [
+      'Real estate outcomes depend on facts we cannot know from a website: your property, your finances, the market on the day. No content here promises results, values, appreciation, program eligibility, or transaction outcomes.'] },
+    { h: 'Intellectual property', body: [
+      'Site text and design are the property of the site operator. Landscape photography is used under Creative Commons and public-domain licenses with attribution on the <a href="' + url('/credits/') + '">photo credits page</a>; those images remain subject to their original licenses. You may link to and quote briefly from this site with attribution; wholesale reproduction requires permission.'] },
+    { h: 'Third-party links', body: [
+      'The site links to outside resources (booking, government references, and others). Those sites have their own terms and policies, and no endorsement of their content is implied.'] },
+    { h: 'Limitation of liability', body: [
+      'To the fullest extent permitted by law, the site operator is not liable for damages arising from use of this site or reliance on its general information. Your sole remedy for dissatisfaction with the site is to stop using it — though we would rather you just call and tell us what is wrong.'] },
+    { h: 'Changes', body: [
+      'These terms may be updated from time to time; the effective date above reflects the current version. Continued use after changes constitutes acceptance.'] },
+  ])
+
+  legalPage({
+    path: '/privacy/', crumb: 'Privacy Policy', kicker: 'Legal', h1: 'Privacy Policy',
+    title: 'Privacy Policy | George Winters — McKenzie River Valley Real Estate',
+    description: 'Privacy policy: this static site sets no cookies and collects no personal data directly. What is (and is not) collected, third-party services, and your rights.',
+    lede: 'The short version: this site sets no cookies, runs no trackers, and has no forms. What little data exists, explained honestly.',
+  }, [
+    { h: 'What this site collects: essentially nothing', body: [
+      'This is a static informational website. It contains no contact forms, no login, no comment system, and no analytics or advertising trackers, and it sets no cookies of its own. Browsing this site does not send us your personal information.'] },
+    { h: 'Third-party services the site relies on', body: [ 'Serving any website involves some infrastructure. Ours:' ],
+      list: [
+        '<strong>Hosting (GitHub Pages)</strong> — pages are served by GitHub, whose servers receive standard web request data (IP address, browser type, pages requested) and maintain logs under GitHub’s own privacy policies.',
+        '<strong>Fonts (Google Fonts)</strong> — typefaces load from Google’s servers, which receive your IP address as part of serving the files, governed by Google’s privacy policy.',
+        '<strong>Outbound links</strong> — booking links go to The Operative Group’s scheduling platform, and reference links go to government and other third-party sites. Each has its own privacy practices that apply once you leave this site.'] },
+    { h: 'When you contact George directly', body: [
+      'If you call, text, or email using the contact details on this site, the information you choose to share (name, contact details, property questions) is used to respond to you and provide real estate services, and may be retained in the client-management systems used by George and The Operative Group. It is not sold. Standard professional and legal record-keeping obligations for real estate licensees apply.'] },
+    { h: 'Your rights', body: [
+      'Depending on where you live (including under the Oregon Consumer Privacy Act and the California Consumer Privacy Act as amended), you may have rights to access, correct, or delete personal information and to opt out of certain processing. Because this site itself collects essentially nothing, most requests will concern information you shared by contacting us directly — and we honor reasonable requests regardless of jurisdiction. See also the <a href="' + url('/do-not-sell/') + '">Do Not Sell or Share</a> page.',
+      `To make a request: email <a href="mailto:${AGENT.email}">${AGENT.email}</a> or call/text ${AGENT.phone}.`] },
+    { h: 'Children', body: [
+      'This site is not directed to children and knowingly collects no information from anyone, children included.'] },
+    { h: 'Changes', body: [
+      'If site functionality ever changes in ways that affect privacy (for example, adding analytics or a contact form), this policy will be updated first and the effective date revised.'] },
+  ])
+
+  legalPage({
+    path: '/accessibility/', crumb: 'Accessibility', kicker: 'Commitment', h1: 'Accessibility Statement',
+    title: 'Accessibility Statement | George Winters — McKenzie River Valley Real Estate',
+    description: 'Accessibility statement: WCAG 2.1 AA intent, implemented features (contrast, keyboard navigation, reduced motion), and how to report barriers.',
+    lede: 'The valley is for everyone, and so is this site. Our standard, our current features, and how to tell us when we fall short.',
+  }, [
+    { h: 'Our standard', body: [
+      'This site aims to conform to the Web Content Accessibility Guidelines (WCAG) 2.1 Level AA. Accessibility is treated as a design requirement, not an afterthought — and as an ongoing practice rather than a finished checkbox.'] },
+    { h: 'What is implemented', body: [ 'Current accessibility features include:' ],
+      list: [
+        'Semantic HTML structure with proper landmarks, headings, and breadcrumb navigation on every page',
+        'Text contrast designed to meet or exceed the 4.5:1 AA ratio across light and dark surfaces',
+        'Visible keyboard focus indicators and fully keyboard-navigable menus and disclosure widgets',
+        'Respect for reduced-motion preferences — animations disable automatically for users who request it',
+        'Descriptive alt text on meaningful images and decorative images hidden from assistive technology',
+        'Readable typography with generous line-height, scalable units, and a responsive layout down to small screens',
+        'Descriptive link text and consistent, predictable navigation across all pages'] },
+    { h: 'Known limitations', body: [
+      'Third-party destinations we link to (booking, government references) have their own accessibility practices we do not control. Some photographs of documents or scenery may convey more to sighted users despite our alt-text efforts.'] },
+    { h: 'Feedback and accommodation', body: [
+      `If any part of this site is difficult to use with your assistive technology — or you would simply prefer the information in another form — contact us and we will provide it: <a href="mailto:${AGENT.email}">${AGENT.email}</a> or call/text ${AGENT.phone}. Real estate service itself is always available by phone, and George will happily accommodate whatever communication works best for you.`] },
+  ])
+
+  legalPage({
+    path: '/do-not-sell/', crumb: 'Do Not Sell or Share', kicker: 'Your privacy rights', h1: 'Do Not Sell or Share My Personal Information',
+    title: 'Do Not Sell or Share My Personal Information | George Winters',
+    description: 'California CCPA/CPRA notice: this site does not sell or share personal information. How California and Oregon residents can exercise privacy rights.',
+    lede: 'The short version: we do not sell or share your personal information. Here is that promise in the form California law contemplates.',
+  }, [
+    { h: 'Our practice: no sale, no sharing', body: [
+      'Neither this website nor George Winters sells personal information, and neither “shares” personal information for cross-context behavioral advertising as those terms are defined by the California Consumer Privacy Act (CCPA), as amended by the CPRA. This site runs no advertising trackers and sets no cookies, so there is nothing to opt out of — but the right and this page exist regardless.'] },
+    { h: 'Your California rights', body: [ 'California residents may exercise rights including:' ],
+      list: [
+        '<strong>Right to know</strong> — what personal information is collected, used, or disclosed',
+        '<strong>Right to delete</strong> — request deletion of personal information, subject to legal exceptions',
+        '<strong>Right to correct</strong> — request correction of inaccurate personal information',
+        '<strong>Right to opt out of sale or sharing</strong> — honored automatically here, since neither occurs',
+        '<strong>Right to non-discrimination</strong> — exercising these rights never affects the service you receive'] },
+    { h: 'Oregon and other states', body: [
+      'Oregon residents have comparable rights under the Oregon Consumer Privacy Act, and residents of other states may have rights under their own laws. Our practice does not vary by state: no sale, no sharing, and reasonable requests honored for everyone.'] },
+    { h: 'How to submit a request', body: [
+      `Email <a href="mailto:${AGENT.email}">${AGENT.email}</a> with the subject “Privacy Request,” or call/text ${AGENT.phone}. Describe your request and how to reach you; identity verification appropriate to the request may be required. Authorized agents may submit requests on a consumer’s behalf with appropriate authorization. We respond within the timeframes applicable law requires.`,
+      'Note that most information we hold, if any, is what you provided by contacting us about real estate — see the <a href="' + url('/privacy/') + '">Privacy Policy</a> for the full picture.'] },
+  ])
+
+  legalPage({
+    path: '/fair-housing/', crumb: 'Fair Housing', kicker: 'Commitment', h1: 'Fair Housing Commitment',
+    title: 'Fair Housing Commitment | George Winters — McKenzie River Valley Real Estate',
+    description: 'Fair housing commitment: equal professional service for all, in compliance with the federal Fair Housing Act and Oregon law.',
+    lede: 'Everyone deserves the valley. Equal service is both the law and the way this practice runs.',
+  }, [
+    { h: 'The commitment', body: [
+      `${AGENT.name} and The Operative Group provide equal professional service to all persons, without regard to race, color, religion, sex, sexual orientation, gender identity, disability, familial status, national origin, marital status, source of income, or any other class protected by federal, Oregon, or local law — in compliance with the federal Fair Housing Act and Oregon fair housing statutes.`] },
+    { h: 'What this means in practice', body: [ 'Concretely:' ],
+      list: [
+        'Every client and customer receives the same professional standard of service, information, and effort',
+        'Property information is shared equally; no steering toward or away from any area based on protected characteristics',
+        'Marketing describes properties and places, never the people who “should” live there',
+        'Reasonable accommodations and modifications are supported as the law provides',
+        'Concerns are taken seriously — raise any with George directly, the Oregon Real Estate Agency, or HUD'] },
+    { h: 'A note about this site’s content', body: [
+      'The area guides on this site describe geography, amenities, and lifestyle facts about communities — deliberately avoiding demographic characterizations and school-quality ratings, consistent with fair housing best practices. Choose your place in the valley for what it is; who belongs there is already settled: anyone.'] },
+  ])
+}
+
 // ============================================================ SITEMAP + ROBOTS
 function buildMeta() {
   const urls = pages.filter((p) => !p.endsWith('404.html')).map((p) => `  <url><loc>${abs(p)}</loc></url>`).join('\n')
@@ -558,5 +688,6 @@ buildHome()
 buildAreas()
 buildGuides()
 buildCore()
+buildLegal()
 buildMeta()
 console.log(`built ${pages.length} pages → ${OUT}/`)

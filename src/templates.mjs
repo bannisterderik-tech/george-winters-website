@@ -193,6 +193,7 @@ ${agentBand()}
     <span>© ${new Date().getFullYear()} ${esc(AGENT.name)} · ${esc(AGENT.brokerage)} · ${esc(AGENT.license)}</span>
     <span class="eho"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3 2 10h3v10h6v-6h2v6h6V10h3L12 3z"/></svg> Equal Housing Opportunity</span>
     <span>Each office independently owned & operated.</span>
+    <span><a href="${url('/terms/')}">Terms</a> · <a href="${url('/privacy/')}">Privacy</a> · <a href="${url('/accessibility/')}">Accessibility</a> · <a href="${url('/do-not-sell/')}">Do Not Sell or Share</a> · <a href="${url('/fair-housing/')}">Fair Housing</a></span>
   </div>
 </footer>
 </body></html>`
