@@ -64,7 +64,7 @@ function buildHome() {
     <div>${checksList([
       '<strong>Riverfront literacy</strong> — flood zones, banks, setbacks, insurance, and what frontage is really worth.',
       '<strong>Rural systems fluency</strong> — wells, septic, wood heat, outbuildings, access, and acreage.',
-      '<strong>Springfield-to-summit coverage</strong> — one agent for the whole corridor, plus Camp Creek and the Mohawk.',
+      '<strong>Springfield-to-summit coverage</strong> — one agent for the whole corridor, plus Camp Creek and Mohawk Valley.',
       '<strong>Straight answers</strong> — even when they cost me the sale. Ask anyone who has called.',
     ])}</div>
   </div>
@@ -72,7 +72,7 @@ function buildHome() {
 
 <section class="band band-tint"><div class="wrap">
   <span class="kicker">Where I work</span>
-  <h2>Fourteen communities. One river road.</h2>
+  <h2>Fourteen communities. One river.</h2>
   <p class="lede">Every stretch of the corridor lives differently. Pick your mile.</p>
   <div class="tile-grid">${areaTiles}</div>
 </div></section>
@@ -113,15 +113,15 @@ function buildAreas() {
   const idx = {
     path: '/areas/',
     title: 'McKenzie River Valley Communities | Area Guide, Springfield to McKenzie Bridge',
-    description: 'Explore every community on the McKenzie corridor: Springfield, Thurston, Cedar Flat, Walterville, Deerhorn, Leaburg, Vida, Nimrod, Finn Rock, Blue River, Rainbow, McKenzie Bridge, Camp Creek & the Mohawk Valley.',
-    img: '/assets/img/mckenzie-river-1.jpg',
+    description: 'Explore every community on the McKenzie corridor: Springfield, Thurston, Cedar Flat, Walterville, Deerhorn, Leaburg, Vida, Nimrod, Finn Rock, Blue River, Rainbow, McKenzie Bridge, Camp Creek & Mohawk Valley.',
+    img: '/assets/img/mckenzie-river-3.jpg',
   }
   emit(idx.path, shell(idx, `
 ${crumbs([{ label: 'Areas' }])}
 <div class="wrap page-head">
   <span class="kicker">Area guide</span>
   <h1>Up the river, mile by mile.</h1>
-  <p class="lede">Fourteen communities share one river road, and each lives differently. These guides cover what makes every stretch its own — and what buying or selling there really involves.</p>
+  <p class="lede">Fourteen communities share one river, and each lives differently. These guides cover what makes every stretch its own — and what buying or selling there really involves.</p>
 </div>
 <section class="band" style="padding-top:0"><div class="wrap">
   <div class="tile-grid">${AREAS.map((a) => `
@@ -332,7 +332,7 @@ ${crumbs([{ label: 'About George' }])}
 </div>
 <section class="band" style="padding-top:0"><div class="wrap split">
   <div class="prose">
-    <p>I live in the McKenzie Valley, and I work the corridor I live on — Springfield to McKenzie Bridge, plus Camp Creek and the Mohawk. That is the whole practice: one river road, known cold.</p>
+    <p>I live in the McKenzie Valley, and I work the corridor I live on — Springfield to McKenzie Bridge, plus Camp Creek and Mohawk Valley. That is the whole practice: one river, known cold.</p>
     <p>It changes how I do the job. Your home's value genuinely means more to me than it does to other agents, because this is my neighborhood too — when homes here sell right, my own community wins. I price properties by walking them, I tour houses in the rain on purpose, and I will tell you when a property is wrong for you even when that costs me the sale.</p>
     <p>I practice with <strong>The Operative Group</strong>, one of the area's most productive teams, brokered by <strong>Real Broker, LLC</strong> — which means you get a neighbor's local knowledge backed by a full team's marketing reach, transaction management, and negotiating depth.</p>
     <h2>How I work</h2>

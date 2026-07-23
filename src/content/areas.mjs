@@ -23,7 +23,7 @@ export const AREAS = [
       'The last full-service stop before the valley: groceries, fuel, trades',
     ],
     buying: [
-      `Buying in Springfield means choosing between distinct pockets rather than one market. In-town neighborhoods offer sidewalks, city utilities, and shorter commutes. East toward Thurston you pick up newer construction and quick access to the river road. And on the eastern edge, the first acreage properties appear — often on well and septic even though town is five minutes away.`,
+      `Buying in Springfield means choosing between distinct pockets rather than one market. In-town neighborhoods offer sidewalks, city utilities, and shorter commutes. East toward Thurston you pick up newer construction and quick access to the corridor. And on the eastern edge, the first acreage properties appear — often on well and septic even though town is five minutes away.`,
       `That mix is exactly why local guidance matters here: two homes a mile apart can live on completely different systems. I flag which side of the city-services line a property sits on before we ever tour it, so financing, inspections, and monthly costs never surprise you.`,
     ],
     selling: [
@@ -35,7 +35,7 @@ export const AREAS = [
       `Commutes are short by any standard — Eugene is across the river, and Highway 126 puts Walterville and Leaburg within an easy drive for river days. If you work anywhere in the metro and dream up river, Springfield is where many people start.`,
     ],
     faqs: [
-      { q: 'Is Springfield a good base for exploring the McKenzie Valley?', a: 'Yes — Springfield sits at the start of Highway 126, the river road. Walterville is about ten minutes east, Leaburg and Vida roughly twenty to thirty, and the upper valley around Blue River and McKenzie Bridge is about an hour. It is the closest full-service city to the whole corridor.' },
+      { q: 'Is Springfield a good base for exploring the McKenzie Valley?', a: 'Yes — Springfield sits at the start of Highway 126, the road up the McKenzie. Walterville is about ten minutes east, Leaburg and Vida roughly twenty to thirty, and the upper valley around Blue River and McKenzie Bridge is about an hour. It is the closest full-service city to the whole corridor.' },
       { q: 'Do Springfield homes use city utilities or wells and septic?', a: 'Most in-town homes are on city water and sewer, but properties on the eastern and southern edges can be on wells and septic systems. Always verify the actual systems on the specific property — it changes inspections, insurance, and monthly costs.' },
       { q: 'How is Springfield different from Eugene for buyers?', a: 'Springfield generally offers more home for the money, a quicker route to the McKenzie corridor, and a more compact, small-city feel. Eugene brings the university, larger job base, and bigger cultural calendar. Many buyers shop both; the right answer depends on commute and lifestyle.' },
       { q: 'What should sellers in Springfield do before listing?', a: 'Tighten the basics: honest pricing against both Springfield and Eugene comps, professional photos, and repairs documented up front. If your property touches rural systems — a well, septic, or outbuildings — gather those records early; they are the first things serious buyers ask about.' },
@@ -47,14 +47,14 @@ export const AREAS = [
     kicker: 'The gateway neighborhood',
     img: '/assets/img/springfield-river-1.jpg',
     imgAlt: 'River flowing past Clearwater Park in Springfield, Oregon',
-    blurb: 'Thurston is east Springfield — the last stoplights, the last big grocery run, and the doorway to the McKenzie river road.',
+    blurb: 'Thurston is east Springfield — the last stoplights, the last big grocery run, and the doorway to the McKenzie Valley.',
     hub: [
       `Every trip up the McKenzie starts in Thurston. This east-Springfield district is the corridor's gateway: the final full grocery stop, the gas you top off before heading up river, and the neighborhoods commuters choose when they want the valley close and the city closer.`,
       `Thurston grew as Springfield stretched east, so its housing stock leans newer than the city core — subdivisions, family streets, and properties that back up to the beginnings of open country. Five minutes east on 126 and the road narrows, the trees close in, and the river valley takes over.`,
       `For a lot of my clients, Thurston is the compromise that ends the debate: one spouse wants acreage quiet, the other wants a short drive to everything. Thurston splits the difference and keeps both happy.`,
     ],
     facts: [
-      'Easternmost Springfield — the true start of the river road',
+      'Easternmost Springfield — where Highway 126 heads up the McKenzie',
       'The corridor’s last major services heading east on Highway 126',
       'Newer housing stock than central Springfield, generally',
       'Minutes from Hendricks Bridge and the lower McKenzie',
@@ -73,7 +73,7 @@ export const AREAS = [
     ],
     faqs: [
       { q: 'Where exactly is Thurston?', a: 'Thurston is the eastern district of Springfield, Oregon, along Highway 126 and Thurston Road. It is the last stretch of full city services before the highway follows the McKenzie River east into the valley.' },
-      { q: 'Why do McKenzie commuters like Thurston?', a: 'Position. It sits at the very start of the river road, so up-river drives skip crossing Springfield entirely, while groceries, gas, and services stay within a few minutes of home.' },
+      { q: 'Why do McKenzie commuters like Thurston?', a: 'Position. It sits right where Highway 126 leaves town for the valley, so up-river drives skip crossing Springfield entirely, while groceries, gas, and services stay within a few minutes of home.' },
       { q: 'Is Thurston on city utilities?', a: 'Most of Thurston is on Springfield city water and sewer, but the eastern fringe transitions to rural systems. Verify per property — the line between the two runs through this district.' },
       { q: 'What is the drive from Thurston to the upper valley?', a: 'Roughly: Walterville in about ten minutes, Leaburg around twenty, Vida about thirty, Blue River forty-five, and McKenzie Bridge near an hour, depending on season and traffic.' },
     ],
@@ -82,8 +82,8 @@ export const AREAS = [
     slug: 'cedar-flat',
     name: 'Cedar Flat',
     kicker: 'First taste of the valley',
-    img: '/assets/img/mckenzie-river-1.jpg',
-    imgAlt: 'The McKenzie River Valley near the lower corridor',
+    img: '/assets/img/oregon-forest-1.jpg',
+    imgAlt: 'Forest closing in along the lower McKenzie corridor',
     blurb: 'Cedar Flat is where the corridor stops feeling like town — the first rural stretch past Thurston, with the river suddenly out the window.',
     hub: [
       `Just past the last Thurston stoplight, the valley starts working on you. Cedar Flat is the corridor's first true rural stretch — small acreages, garden ground, and homes tucked between Highway 126 and the hills, with the McKenzie beginning to show itself through the trees.`,
@@ -94,7 +94,7 @@ export const AREAS = [
       'First rural stretch of the corridor east of Springfield/Thurston',
       'Small-acreage properties: wells, septic, shops and outbuildings',
       'Fifteen-ish minutes to full Springfield services',
-      'Camp Creek Road connects toward the Mohawk Valley side',
+      'Camp Creek Road connects toward Mohawk Valley',
     ],
     buying: [
       `Cedar Flat is often where buyers first confront rural systems: your inspection list grows to include well flow and water quality, septic condition, and outbuilding wiring. None of it should scare you — it just needs to be checked by people who know what right looks like out here.`,
@@ -109,7 +109,7 @@ export const AREAS = [
       `Neighbors know each other here. It is the kind of stretch where tractors get borrowed, extra zucchini gets left on porches, and the wave off the steering wheel is standard equipment.`,
     ],
     faqs: [
-      { q: 'Where is Cedar Flat on the corridor?', a: 'Cedar Flat is the first rural area east of Springfield’s Thurston district on Highway 126, before you reach Walterville. It marks the start of well-and-septic country on the McKenzie river road.' },
+      { q: 'Where is Cedar Flat on the corridor?', a: 'Cedar Flat is the first rural area east of Springfield’s Thurston district on Highway 126, before you reach Walterville. It marks the start of well-and-septic country on the McKenzie corridor.' },
       { q: 'Are Cedar Flat properties on wells and septic?', a: 'Generally yes — most properties here run private wells and septic systems. Budget for well flow and water quality testing plus a septic inspection in any purchase.' },
       { q: 'How far is Cedar Flat from shopping and services?', a: 'Roughly ten to fifteen minutes to full services in Thurston and Springfield — close enough that many residents barely notice they have left town, which is exactly the appeal.' },
       { q: 'Is Cedar Flat a good fit for hobby farms?', a: 'Many properties suit gardens, small livestock, and shop projects. Confirm zoning and any land-use rules for the specific parcel before you plan — allowed uses vary by zone.' },
@@ -118,9 +118,9 @@ export const AREAS = [
   {
     slug: 'walterville',
     name: 'Walterville',
-    kicker: 'First stop up the river road',
-    img: '/assets/img/mckenzie-valley-3.jpg',
-    imgAlt: 'Flat water on the lower McKenzie near Walterville, Oregon',
+    kicker: 'First stop up the McKenzie',
+    img: '/assets/img/walterville-town.jpg',
+    imgAlt: 'Highway 126 passing the Walterville, Oregon community sign',
     blurb: 'Walterville is the lower valley’s hub — a real community with the river out back and town ten minutes down the road.',
     hub: [
       `Walterville is where the corridor becomes a community. The lower valley's little hub has its own store, its own school-and-grange rhythm of country life, and some of the most livable river country anywhere on the McKenzie: flat water, big cottonwoods, and pastures running toward the hills.`,
@@ -131,7 +131,6 @@ export const AREAS = [
       'The lower valley’s community hub, about ten minutes east of Springfield',
       'Hendricks Bridge Park: boat launch and day-use on the lower McKenzie',
       'Historic Walterville canal, part of the valley’s early hydropower era',
-      'Golf on the river: the McKenzie River Golf Course sits in this stretch',
       'Mix of riverfront, pasture, and small-acreage properties',
     ],
     buying: [
@@ -156,19 +155,19 @@ export const AREAS = [
   {
     slug: 'deerhorn',
     name: 'Deerhorn',
-    kicker: 'Quiet lanes, golf on the river',
+    kicker: 'Quiet lanes on the south bank',
     img: '/assets/img/mckenzie-bridge-1.jpg',
     imgAlt: 'Clear water of the McKenzie River along a wooded bank',
     blurb: 'Deerhorn is the corridor’s hidden pocket — a lattice of quiet lanes between Walterville and Leaburg where the river slows and so do you.',
     hub: [
       `Cross the river at Deerhorn Road and you enter one of the corridor's best-kept pockets. Deerhorn runs along the McKenzie's south bank in a web of quiet lanes — no through-traffic, no commercial strip, just river properties, meadows, and the kind of stillness the highway side rarely offers.`,
-      `The area's calling cards are water and pace. The river braids gently through this stretch, golfers work the riverside fairways of the local course, and herons outnumber commuters most mornings.`,
+      `The area's calling cards are water and pace. The river braids gently through this stretch, herons outnumber commuters most mornings, and the ground where the old riverside golf course ran is now giving way to a new generation of river-adjacent homesites.`,
       `Because Deerhorn sits off the highway, its properties trade on privacy. When one comes available, buyers who know the corridor pay attention — quiet, close-in river country is the scarcest thing on the McKenzie.`,
     ],
     facts: [
       'South-bank pocket between Walterville and Leaburg, off the highway',
       'Quiet dead-end lanes rather than through-roads',
-      'Riverside golf in the Deerhorn/Walterville stretch',
+      'Former golf-course ground now becoming new riverside homesites',
       'Roughly fifteen minutes to Springfield services',
     ],
     buying: [
@@ -186,7 +185,7 @@ export const AREAS = [
     faqs: [
       { q: 'Where is Deerhorn?', a: 'Deerhorn is the south-bank area of the lower McKenzie between Walterville and Leaburg, reached via Deerhorn Road. It is a residential pocket of quiet lanes rather than a highway-side community.' },
       { q: 'Why is Deerhorn considered special on the corridor?', a: 'It combines close-in location with off-highway quiet — a rare pairing. River properties here feel remote while staying about fifteen minutes from Springfield services.' },
-      { q: 'Is there golf in Deerhorn?', a: 'Yes — the riverside course in the Deerhorn/Walterville stretch is a fixture of the lower valley, and some properties enjoy fairway or near-course settings.' },
+      { q: 'What happened to the golf course in Deerhorn?', a: 'The riverside course no longer operates — its ground is transitioning into new homesites, some of the most interesting river-adjacent lots on the lower corridor. Ask me for current availability and details.' },
       { q: 'How often do Deerhorn properties come up for sale?', a: 'Infrequently — inventory is limited and owners stay. Serious buyers benefit from being pre-approved and letting me watch the area on their behalf.' },
     ],
   },
@@ -346,14 +345,14 @@ export const AREAS = [
     imgAlt: 'The clear waters of Blue River, Oregon',
     blurb: 'Blue River is the upper valley’s hub — reservoir summers, trailhead winters, and a community rebuilding with famous grit.',
     hub: [
-      `Blue River anchors the upper McKenzie. The community sits where its namesake river meets the McKenzie, with two celebrated reservoirs — Blue River Lake and Cougar — supplying the summers, and Tokatee's renowned golf course, hot-springs country, and endless trail systems filling every other season.`,
+      `Blue River anchors the upper McKenzie. The community sits where its namesake river meets the McKenzie, with two celebrated reservoirs — Blue River Lake and Cougar — supplying the summers, and Tokatee's renowned golf course up the highway toward McKenzie Bridge, hot-springs country, and endless trail systems filling every other season.`,
       `The 2020 Holiday Farm Fire hit Blue River hard, and what has happened since is the valley's proudest story: a community that chose to rebuild, and is doing it with energy — new construction, restored services, and an unbroken identity.`,
       `For buyers, Blue River offers the upper valley's widest range: rebuilt homes, legacy cabins that came through, buildable land, and recreation at a density few places in Oregon match.`,
     ],
     facts: [
       'Upper-valley hub where Blue River meets the McKenzie',
       'Blue River Reservoir and Cougar Reservoir recreation',
-      'Tokatee Golf Club — one of Oregon’s celebrated courses',
+      'Tokatee Golf Club — one of Oregon’s celebrated courses, up the McKenzie toward McKenzie Bridge',
       'Rebuilding community following the 2020 fire — significant newer construction',
       'About 45 minutes east of Springfield',
     ],
@@ -494,14 +493,14 @@ export const AREAS = [
     kicker: 'The quiet side valley',
     img: '/assets/img/willamette-valley-1.jpg',
     imgAlt: 'Farmland and forested hills in a Willamette Valley side valley',
-    blurb: 'Camp Creek is the corridor’s pastoral side pocket — barn-and-pasture country folded into the hills between the McKenzie and the Mohawk.',
+    blurb: 'Camp Creek is the corridor’s pastoral side pocket — barn-and-pasture country folded into the hills between the McKenzie and Mohawk valleys.',
     hub: [
-      `Camp Creek Road leaves the river near Cedar Flat and climbs into a different postcard: a pastoral side valley of pastures, barns, and timbered ridgelines, running the quiet miles between the McKenzie corridor and the Mohawk Valley.`,
+      `Camp Creek Road leaves the river near Cedar Flat and climbs into a different postcard: a pastoral side valley of pastures, barns, and timbered ridgelines, running the quiet miles between the McKenzie corridor and Mohawk Valley.`,
       `This is small-farm country close to town — horse setups, hay ground, family compounds, and homesteads that have fed generations. The river is minutes away, Springfield barely farther, yet the valley keeps a horse-and-gravel hush the highway never hears.`,
       `Buyers wanting land-first properties — where the acreage is the point and the house serves it — find Camp Creek delivers the most pasture per commute-minute on this side of the county.`,
     ],
     facts: [
-      'Pastoral side valley connecting the McKenzie corridor toward the Mohawk',
+      'Pastoral side valley connecting the McKenzie corridor toward Mohawk Valley',
       'Small farms, horse properties, and homestead acreage',
       'Minutes from Cedar Flat/Walterville and Springfield services',
       'Gravel-quiet roads and working-land character',
@@ -519,7 +518,7 @@ export const AREAS = [
       `The road itself sets the tone: unhurried, neighborly, and lined with places that look loved. People wave here. You will too.`,
     ],
     faqs: [
-      { q: 'Where does Camp Creek Road run?', a: 'From the lower McKenzie corridor near Cedar Flat, through its namesake pastoral valley toward the Mohawk Valley — a quiet rural byway minutes from Springfield.' },
+      { q: 'Where does Camp Creek Road run?', a: 'From the lower McKenzie corridor near Cedar Flat, through its namesake pastoral valley toward Mohawk Valley — a quiet rural byway minutes from Springfield.' },
       { q: 'What property types define Camp Creek?', a: 'Small farms and acreage: horse properties, hay ground, homesteads, and rural homes with serious outbuildings. Land capability drives value here.' },
       { q: 'What should I verify on a Camp Creek farm property?', a: 'Water (wells, rights, stock water), fencing, soils and drainage, outbuilding condition, and zoning for your intended use — plus the standard rural systems checklist.' },
       { q: 'How close is Camp Creek to services?', a: 'Typically ten to twenty minutes to Springfield/Thurston services depending on how far up the valley you are — remarkably close for genuine farm country.' },
@@ -531,11 +530,11 @@ export const AREAS = [
     kicker: 'The neighboring valley',
     img: '/assets/img/oregon-barn-1.jpg',
     imgAlt: 'A historic barn in rural Lane County, Oregon',
-    blurb: 'The Mohawk Valley is the corridor’s sister valley — timber-framed farm country over the hill, with Marcola at its heart.',
+    blurb: 'Mohawk Valley is the corridor’s sister valley — timber-framed farm country over the hill, with Marcola at its heart.',
     hub: [
-      `One ridge north of the McKenzie, the Mohawk Valley runs its own unhurried course. This is timber-and-farm country in the classic Oregon mold — the Mohawk River winding past pastures, the community of Marcola at the valley's heart, and working land traditions that go back generations.`,
-      `Many corridor buyers end up comparing the two valleys, and I work both sides of the ridge: the Mohawk offers more pasture and homestead ground for the money, while the McKenzie offers the river itself. Families often split the difference by lifestyle.`,
-      `From Marcola, Springfield is a straightforward drive, making the Mohawk one of the area's most livable big-acreage options.`,
+      `One ridge north of the McKenzie, Mohawk Valley runs its own unhurried course. This is timber-and-farm country in the classic Oregon mold — the Mohawk River winding past pastures, the community of Marcola at the valley's heart, and working land traditions that go back generations.`,
+      `Many corridor buyers end up comparing the two valleys, and I work both sides of the ridge: Mohawk offers more pasture and homestead ground for the money, while the McKenzie offers the river itself. Families often split the difference by lifestyle.`,
+      `From Marcola, Springfield is a straightforward drive, making Mohawk one of the area's most livable big-acreage options.`,
     ],
     facts: [
       'The next valley north, following the Mohawk River through Marcola',
@@ -556,9 +555,9 @@ export const AREAS = [
       `It is quieter than the McKenzie corridor in every season — no highway hum, no tourist summer — which for many residents is the entire argument.`,
     ],
     faqs: [
-      { q: 'Where is the Mohawk Valley?', a: 'Immediately north of the McKenzie corridor, following the Mohawk River through Marcola — one ridge and a short drive from Springfield.' },
-      { q: 'How does it compare to the McKenzie corridor?', a: 'More farm and timber acreage for the money, without the river-recreation economy. Buyers choose the Mohawk for land capability and deep quiet, the McKenzie for the water itself.' },
-      { q: 'Does George cover the Mohawk Valley?', a: 'Yes — my practice covers both valleys, and I regularly tour buyers across the ridge in a single day to compare. One buyer pool, two flavors of country life.' },
+      { q: 'Where is Mohawk Valley?', a: 'Immediately north of the McKenzie corridor, following the Mohawk River through Marcola — one ridge and a short drive from Springfield.' },
+      { q: 'How does it compare to the McKenzie corridor?', a: 'More farm and timber acreage for the money, without the river-recreation economy. Buyers choose Mohawk for land capability and deep quiet, the McKenzie for the water itself.' },
+      { q: 'Does George cover Mohawk Valley?', a: 'Yes — my practice covers both valleys, and I regularly tour buyers across the ridge in a single day to compare. One buyer pool, two flavors of country life.' },
       { q: 'What diligence applies to Mohawk properties?', a: 'Full rural checklists: wells and water rights, septic, soils, access easements, timber and zoning considerations. The valley’s working-land character makes land diligence the core of every purchase.' },
     ],
   },

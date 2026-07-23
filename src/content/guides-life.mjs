@@ -402,7 +402,7 @@ export const LIVING = [
           '<strong>Tamolitch Blue Pool</strong> — the impossible turquoise, earned by trail.',
           '<strong>Hot springs</strong> — Belknap on the highway, Terwilliger up the Aufderheide.',
           '<strong>McKenzie River Trail</strong> — 26 celebrated miles for boots and mountain bikes.',
-          '<strong>Tokatee Golf Club</strong> — one of Oregon’s storied courses, in Blue River country.',
+          '<strong>Tokatee Golf Club</strong> — one of Oregon’s storied courses, up the McKenzie between Blue River and McKenzie Bridge.',
           '<strong>The reservoirs</strong> — Blue River and Cougar for lake summers.',
           '<strong>The river itself</strong> — drift boats, rafts, wild trout water, swimming holes.',
           '<strong>Clear Lake & the headwaters</strong> — the crystalline source, up top.',

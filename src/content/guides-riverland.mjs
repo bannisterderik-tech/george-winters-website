@@ -369,7 +369,7 @@ export const LAND = [
     related: [
       { href: '/guides/land/zoning-farm-forest-oregon/', label: 'Forest zoning' },
       { href: '/guides/land/fire-affected-land/', label: 'Fire-affected parcels' },
-      { href: '/areas/mohawk-valley/', label: 'Timber country: the Mohawk' },
+      { href: '/areas/mohawk-valley/', label: 'Timber country: Mohawk Valley' },
     ],
   },
   {

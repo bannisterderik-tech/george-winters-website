@@ -5,7 +5,7 @@ import { BUYING, SELLING } from './guides-transact.mjs'
 import { FIRSTTIME, LIVING } from './guides-life.mjs'
 
 export const GUIDE_CATS = [
-  { slug: 'wells', label: 'Wells', title: 'Wells & water, demystified', img: '/assets/img/mckenzie-river-1.jpg',
+  { slug: 'wells', label: 'Wells', title: 'Wells & water, demystified', img: '/assets/img/mckenzie-bridge-1.jpg',
     blurb: 'Well logs, flow tests, water quality, shared systems — everything a private water supply asks of buyers and sellers.' },
   { slug: 'septic', label: 'Septic', title: 'Septic systems, minus the mystery', img: '/assets/img/oregon-barn-1.jpg',
     blurb: 'Inspections, drainfields, bedroom-count rules, and the care habits that buy decades of quiet service.' },
