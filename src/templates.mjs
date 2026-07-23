@@ -153,7 +153,8 @@ export function shell(page, bodyHtml, schemas = []) {
     <span class="logo-name">George Winters</span>
     <span class="logo-brand">· Real Broker</span>
   </a>
-  <nav aria-label="Main">${navHtml}<a class="head-call" href="${AGENT.phoneHref}">${AGENT.phone}</a></nav>
+  <nav aria-label="Main">${navHtml}</nav>
+  <a class="head-call" href="${AGENT.phoneHref}">${AGENT.phone}</a>
 </div></header>
 <main id="main">
 ${bodyHtml}
