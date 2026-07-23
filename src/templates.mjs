@@ -1,5 +1,9 @@
 // Template engine — plain functions returning HTML strings. Zero deps.
+import { createHash } from 'node:crypto'
+import { readFileSync } from 'node:fs'
 import { SITE, AGENT, NAV, url, abs } from './config.mjs'
+
+const CSS_V = createHash('md5').update(readFileSync('assets/css/site.css')).digest('hex').slice(0, 8)
 
 export const esc = (s) => String(s ?? '')
   .replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;')
@@ -139,7 +143,7 @@ export function shell(page, bodyHtml, schemas = []) {
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..600&family=Space+Grotesk:wght@400..700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="${url('/assets/css/site.css')}">
+<link rel="stylesheet" href="${url('/assets/css/site.css')}?v=${CSS_V}">
 <script type="application/ld+json">${JSON.stringify({ '@context': 'https://schema.org', '@graph': graph })}</script>
 </head>
 <body>
