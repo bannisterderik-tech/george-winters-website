@@ -678,6 +678,7 @@ function buildMeta() {
   fs.writeFileSync(path.join(OUT, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${abs('/sitemap.xml')}\n`)
   fs.writeFileSync(path.join(OUT, '.nojekyll'), '')
   fs.writeFileSync(path.join(OUT, 'CNAME'), new URL(SITE.base).hostname + '\n')
+  fs.copyFileSync('assets/img/favicon.png', path.join(OUT, 'favicon.ico'))
 }
 
 // ============================================================ RUN

@@ -143,7 +143,9 @@ export function shell(page, bodyHtml, schemas = []) {
 <meta name="twitter:image" content="${ogImg}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0f1a06">
-<link rel="icon" href="${url('/assets/img/favicon.png')}">
+<link rel="icon" type="image/png" sizes="64x64" href="${url('/assets/img/favicon.png')}">
+<link rel="icon" type="image/png" sizes="32x32" href="${url('/assets/img/favicon-32.png')}">
+<link rel="apple-touch-icon" href="${url('/assets/img/apple-touch-icon.png')}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..600&family=Space+Grotesk:wght@400..700&display=swap" rel="stylesheet">
