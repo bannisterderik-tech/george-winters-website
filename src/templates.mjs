@@ -116,7 +116,7 @@ export const placeSchema = (area) => ({
 export function shell(page, bodyHtml, schemas = []) {
   const canonical = abs(page.path)
   const title = page.title.length > 62 ? page.title : `${page.title}`
-  const ogImg = abs(page.img || '/assets/img/og-default.jpg')
+  const ogImg = abs('/assets/img/og-george.jpg')
   const graph = [agentSchema(), ...schemas.filter(Boolean)]
   const navHtml = NAV.map((n) => {
     const current = page.path.startsWith(n.href) ? ' aria-current="page"' : ''
@@ -137,6 +137,10 @@ export function shell(page, bodyHtml, schemas = []) {
 <meta property="og:description" content="${esc(page.description)}">
 <meta property="og:url" content="${canonical}">
 <meta property="og:image" content="${ogImg}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="George Winters, McKenzie River Valley Realtor">
+<meta name="twitter:image" content="${ogImg}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0f1a06">
 <link rel="icon" href="${url('/assets/img/favicon.png')}">
