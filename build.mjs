@@ -677,6 +677,7 @@ function buildMeta() {
   fs.writeFileSync(path.join(OUT, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`)
   fs.writeFileSync(path.join(OUT, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${abs('/sitemap.xml')}\n`)
   fs.writeFileSync(path.join(OUT, '.nojekyll'), '')
+  fs.writeFileSync(path.join(OUT, 'CNAME'), new URL(SITE.base).hostname + '\n')
 }
 
 // ============================================================ RUN

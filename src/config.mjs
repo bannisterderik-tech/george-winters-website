@@ -1,7 +1,7 @@
 // Site-wide configuration — single source of truth.
 // Change BASE when moving to a custom domain, then rebuild.
 export const SITE = {
-  base: 'https://bannisterderik-tech.github.io/george-winters-website',
+  base: 'https://mckenzieriverrealestate.com',
   name: 'George Winters · McKenzie River Valley Real Estate',
   shortName: 'George Winters',
   tagline: 'Real estate up the McKenzie — Springfield to the summit.',
