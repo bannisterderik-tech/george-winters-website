@@ -202,13 +202,13 @@ export const LISTINGS = [
       'This is a rare thing in the upper valley: buildable, cleared, in-town ground in Blue River, right in the middle of the rebuild. Two lots, 0.39 acres together, on a corner with gravel access already in.',
       'What makes it unusual is the zoning. The listing contemplates up to two single-family homes, multi-family, a bed and breakfast, or a commercial use — retail, a restaurant, an office. In a town of this size, a parcel that can carry a business and housing is the kind of thing that gets bought once and held.',
       'Context matters here. Blue River lost most of its core in the 2020 Holiday Farm Fire and has spent the years since rebuilding on purpose — a new library, a medical clinic, a fire station. The town has services again and keeps adding them. The ground that is left in the middle of it is finite.',
-      'Zoning and development feasibility are the buyer\'s to confirm with Lane County Land Management. I will tell you what I know and point you at the right desk, but do not write on a use you have not had the county confirm in writing.',
+      'I did not take that on faith from a listing sheet. Lane County Land Management put the zoning in writing for both tax lots: Community Flex Use, Lane Code 16.286 — up to two single-family dwellings or a multiple-dwelling unit, plus lodging, clinic, light industrial and public uses, with commercial uses subject to a Type I or Type II review depending on what you want to do. Ask me for the county email and I will send it with the code section.',
     ],
 
     highlights: [
       ['Two lots', '0.39 acres total, conveying together'],
       ['Corner, cleared', 'Raw land with gravel access in place'],
-      ['Mixed-use potential', 'Residential, multi-family or commercial — verify with the county'],
+      ['Community Flex Use zoning', 'Two homes, a multiple-dwelling unit, lodging or commercial — county-confirmed'],
       ['Town services', 'Rebuilt library, medical clinic and fire station nearby'],
       ['Upper-valley hub', 'Blue River Reservoir, Cougar, and Tokatee up the highway'],
       ['Scarce ground', 'In-town buildable land in a town that is rebuilding'],
@@ -222,8 +222,10 @@ export const LISTINGS = [
         ['Improvements', 'None — raw land'],
       ]],
       ['Use & utilities', [
-        ['Zoning', 'Verify with Lane County Land Management — the permitted-use list is the whole value here'],
-        ['Contemplated uses', 'Up to two single-family homes, multi-family, B&B, retail, restaurant or office — per the listing, buyer to confirm'],
+        ['Zoning', 'Community Flex Use — Lane Code 16.286 (confirmed in writing by Lane County Land Management)'],
+        ['Allowed uses', 'Up to two single-family dwellings, or a multiple-dwelling unit. Bed and breakfast, residential home and home office are allowable. Clinic, light industrial and public uses are allowed as well'],
+        ['Commercial uses', 'Allowed, but may require Type I or Type II approval depending on the use — review criteria are in LC 16.286(5)'],
+        ['Tax lots', '1645282005100 and 1645282005200 (account 509-NQ21-01056)'],
         ['Water', 'Ask — confirm service availability and connection cost'],
         ['Sewer / septic', 'Ask — confirm before you plan a build'],
         ['Power', 'Ask'],
@@ -241,8 +243,8 @@ export const LISTINGS = [
       kind: 'rural',
       intro: 'Land is bought on what you are allowed to do with it. Four questions decide whether this parcel is worth what you have in mind, and all four have answers you can get before you write.',
       items: [
-        ['Zoning', 'Confirm the code and the permitted-use list',
-          'Everything the listing contemplates — two homes, multi-family, lodging, commercial — lives or dies on the zoning designation and the conditional-use process. Lane County Land Management will tell you in writing. Do not take a zoning code off a listing site, including this one.'],
+        ['Zoning', 'Community Flex Use — Lane Code 16.286',
+          'Lane County Land Management confirmed this in writing for both tax lots: up to two single-family dwellings or a multiple-dwelling unit, plus a bed and breakfast, residential home or home office. Clinic, light industrial and public uses are allowed too. Commercial uses are allowed but may need Type I or Type II approval depending on what you intend — the review criteria are in subsection (5). Ask me for the county email and read the code section before you write.'],
         ['Water and sewer', 'Confirm service and connection cost',
           'In-town Blue River is not the same as a rural parcel with a well and a drainfield, and connection fees are a real line item. Get the number before you budget the build.'],
         ['Fire rebuild context', 'Ask what was on these lots before 2020',
@@ -261,7 +263,6 @@ export const LISTINGS = [
     listedBy: 'Daniel Gandee & George Winters, Real Broker LLC',
 
     verify: [
-      'The zoning designation — the IDX record abbreviates it and I will not publish a code I have not read off the county record',
       'Whether utilities are stubbed to the lots',
       'The $0 property-tax figure in the record',
       'Current price and status',
