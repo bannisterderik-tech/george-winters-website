@@ -116,7 +116,10 @@ export const placeSchema = (area) => ({
 export function shell(page, bodyHtml, schemas = []) {
   const canonical = abs(page.path)
   const title = page.title.length > 62 ? page.title : `${page.title}`
-  const ogImg = abs('/assets/img/og-george.jpg')
+  // Listing pages pass their own hero as the share image; everything else uses
+  // the branded card. page.noindex keeps drafts out of search and the sitemap.
+  const ogImg = abs(page.ogImg || '/assets/img/og-george.jpg')
+  const ogAlt = page.ogAlt || `${AGENT.name}, McKenzie River Valley Realtor`
   const graph = [agentSchema(), ...schemas.filter(Boolean)]
   const navHtml = NAV.map((n) => {
     const current = page.path.startsWith(n.href) ? ' aria-current="page"' : ''
@@ -139,9 +142,9 @@ export function shell(page, bodyHtml, schemas = []) {
 <meta property="og:image" content="${ogImg}">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="George Winters, McKenzie River Valley Realtor">
+<meta property="og:image:alt" content="${esc(ogAlt)}">
 <meta name="twitter:image" content="${ogImg}">
-<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:card" content="summary_large_image">${page.noindex ? '\n<meta name="robots" content="noindex, nofollow">' : ''}
 <meta name="theme-color" content="#0f1a06">
 <link rel="icon" type="image/png" sizes="64x64" href="${url('/assets/img/favicon.png')}">
 <link rel="icon" type="image/png" sizes="32x32" href="${url('/assets/img/favicon-32.png')}">

@@ -28,6 +28,7 @@ export const AGENT = {
 }
 
 export const NAV = [
+  { href: '/listings/', label: 'Listings' },
   { href: '/areas/', label: 'Areas' },
   { href: '/guides/', label: 'Guides' },
   { href: '/buy/', label: 'Buy' },

@@ -8,6 +8,7 @@ import {
 } from './src/templates.mjs'
 import { AREAS } from './src/content/areas.mjs'
 import { GUIDES, GUIDE_CATS } from './src/content/guides.mjs'
+import { buildListings, draftPaths } from './src/listings-build.mjs'
 
 const OUT = 'docs'
 const pages = []
@@ -673,7 +674,8 @@ function buildLegal() {
 
 // ============================================================ SITEMAP + ROBOTS
 function buildMeta() {
-  const urls = pages.filter((p) => !p.endsWith('404.html')).map((p) => `  <url><loc>${abs(p)}</loc></url>`).join('\n')
+  const hidden = new Set(draftPaths())
+  const urls = pages.filter((p) => !p.endsWith('404.html') && !hidden.has(p)).map((p) => `  <url><loc>${abs(p)}</loc></url>`).join('\n')
   fs.writeFileSync(path.join(OUT, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`)
   fs.writeFileSync(path.join(OUT, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${abs('/sitemap.xml')}\n`)
   fs.writeFileSync(path.join(OUT, '.nojekyll'), '')
@@ -691,5 +693,6 @@ buildAreas()
 buildGuides()
 buildCore()
 buildLegal()
+buildListings(emit)
 buildMeta()
 console.log(`built ${pages.length} pages → ${OUT}/`)
