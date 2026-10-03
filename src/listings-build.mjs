@@ -337,7 +337,10 @@ ${crumbs([{ label: 'Listings', href: '/listings/' }])}
     <p>Up the river, a lot of property changes hands on a phone call — an estate, a neighbor who is finally ready, a cabin that would get picked apart by out-of-area buyers if it ever hit the open market. If you want to see those, the way in is to be on my list before they exist.</p>
     <p>Tell me the stretch of the corridor you want, the number you can work with, and whether well-and-septic scares you. That is enough for me to know what to call you about.</p>
   </div>
-  ${showingCtasGeneric()}
+  <div class="btn-row">
+    <a class="btn btn-solid" href="${url('/pocket/')}">Get on the off-market list</a>
+    <a class="btn btn-ghost" href="${AGENT.phoneHref}">Call or text ${AGENT.phone}</a>
+  </div>
 </div></section>`, [crumbSchema([{ label: 'Listings', href: '/listings/' }]),
     live.length ? {
       '@type': 'ItemList',

@@ -9,6 +9,7 @@ import {
 import { AREAS } from './src/content/areas.mjs'
 import { GUIDES, GUIDE_CATS } from './src/content/guides.mjs'
 import { buildListings, draftPaths } from './src/listings-build.mjs'
+import { buildPocket } from './src/pocket-build.mjs'
 
 const OUT = 'docs'
 const pages = []
@@ -694,5 +695,6 @@ buildGuides()
 buildCore()
 buildLegal()
 buildListings(emit)
+buildPocket(emit)
 buildMeta()
 console.log(`built ${pages.length} pages → ${OUT}/`)

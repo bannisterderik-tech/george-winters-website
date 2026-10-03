@@ -192,6 +192,8 @@ ${agentBand()}
       <li><a href="${url('/guides/')}">All guides →</a></li>
     </ul></div>
     <div><h4>George</h4><ul>
+      <li><a href="${url('/listings/')}">Listings</a></li>
+      <li><a href="${url('/pocket/')}">Off-market list</a></li>
       <li><a href="${url('/about/')}">About</a></li>
       <li><a href="${AGENT.bookUrl}" rel="noopener">Book a call</a></li>
       <li><a href="${AGENT.phoneHref}">${AGENT.phone}</a></li>

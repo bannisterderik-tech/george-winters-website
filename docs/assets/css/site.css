@@ -476,3 +476,42 @@ table.facts td .sub { display: block; font-size: .82rem; color: var(--ink-faint)
 .empty-state p { color: var(--ink-soft); margin-top: .6rem; }
 .map-links { font-family: var(--font-ui); font-size: .85rem; margin-top: .7rem; }
 .map-links a { color: var(--green-deep); font-weight: 500; }
+
+/* ======================================================================
+   POCKET / OFF-MARKET REGISTRATION
+   ====================================================================== */
+.pocket-hero .lh-photo img { aspect-ratio: 4/3; }
+.pocket-form-wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: clamp(1.6rem, 4vw, 3.4rem); align-items: start; }
+@media (max-width: 880px) { .pocket-form-wrap { grid-template-columns: 1fr; } }
+.pf-intro .lede { margin-top: .8rem; }
+.pf-points { margin-top: 1.4rem !important; }
+.pf-points li span { color: var(--ink-soft); font-size: .98rem; line-height: 1.5; }
+.pf-points li::before { content: ""; flex: 0 0 1.35rem; width: 1.35rem; height: 1.35rem; margin-top: .18em; border-radius: 7px; background: var(--green); }
+
+.pocket-form { background: var(--paper-2); border: 1px solid var(--hairline); border-radius: var(--radius); padding: clamp(1.3rem, 3.5vw, 2.1rem); display: grid; gap: 1rem; }
+.pocket-form label { display: grid; gap: .35rem; font-family: var(--font-ui); font-size: .86rem; font-weight: 500; color: var(--ink-soft); }
+.pocket-form .req { color: var(--green-deep); }
+.pocket-form input[type="text"], .pocket-form input[type="email"], .pocket-form input[type="tel"],
+.pocket-form input[type="number"], .pocket-form select, .pocket-form textarea {
+  font: inherit; font-family: var(--font-ui); font-size: .95rem; padding: .6rem .75rem;
+  border: 1.5px solid var(--hairline-strong); border-radius: 9px; background: var(--paper);
+  color: var(--ink); width: 100%; min-height: 44px;
+}
+.pocket-form textarea { min-height: 84px; resize: vertical; }
+.pocket-form input:focus-visible, .pocket-form select:focus-visible, .pocket-form textarea:focus-visible {
+  outline: 3px solid var(--green); outline-offset: 1px; border-color: var(--green-deep);
+}
+.pf-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+@media (max-width: 520px) { .pf-row { grid-template-columns: 1fr; } }
+.pf-check { grid-template-columns: auto 1fr; align-items: start; gap: .6rem !important; font-size: .82rem; line-height: 1.5; color: var(--ink-faint); }
+.pf-check input { margin-top: .15rem; width: 1.1rem; height: 1.1rem; accent-color: var(--green-deep); flex: none; }
+.pf-hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.pf-submit { justify-self: start; border: 0; cursor: pointer; font-size: 1rem; }
+.pf-submit[disabled] { opacity: .6; cursor: progress; }
+.pf-error { font-family: var(--font-ui); font-size: .9rem; color: #8d2020; background: #f6e3e3; border-radius: 8px; padding: .6rem .8rem; margin: 0; }
+.pf-done { background: var(--green-ink); color: #eef3e3; border-radius: var(--radius); padding: clamp(1.5rem, 4vw, 2.6rem); }
+.pf-done h2, .pf-done h3 { color: #fbfdf6; }
+.pf-done .kicker { color: var(--green-bright); }
+.pf-done .lede, .pf-done p { color: rgba(238, 243, 227, .8); }
+.pf-done .steps > li::before { background: var(--green); color: var(--green-ink); }
+.pf-done .btn-ghost { color: #e8eedd; }
