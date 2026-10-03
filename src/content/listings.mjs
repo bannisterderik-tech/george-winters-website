@@ -40,7 +40,7 @@ export const LISTINGS = [
   // ═══════════════════════════════════════════════════════════════════════════
   {
     slug: '88175-tiki-ln',
-    status: 'draft',
+    status: 'active',
     address: '88175 Tiki Lane',
     city: 'Springfield',
     state: 'OR',
@@ -176,7 +176,7 @@ export const LISTINGS = [
   // ═══════════════════════════════════════════════════════════════════════════
   {
     slug: '51790-echo-st',
-    status: 'draft',
+    status: 'active',
     address: '51790 Echo Street',
     city: 'Blue River',
     state: 'OR',
@@ -274,7 +274,7 @@ export const LISTINGS = [
   // ═══════════════════════════════════════════════════════════════════════════
   {
     slug: '55636-mckenzie-river-dr-9',
-    status: 'draft',
+    status: 'active',
     address: '55636 McKenzie River Drive',
     unit: 'Space 9',
     city: 'Blue River',
@@ -385,7 +385,7 @@ export const LISTINGS = [
   // ═══════════════════════════════════════════════════════════════════════════
   {
     slug: '5335-daisy-st-101',
-    status: 'draft',
+    status: 'active',
     address: '5335 Daisy Street',
     unit: 'Space 101',
     city: 'Springfield',

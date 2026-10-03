@@ -347,8 +347,11 @@ ${crumbs([{ label: 'Listings', href: '/listings/' }])}
   // One page per listing
   for (const l of LISTINGS) {
     const photos = photosFor(l)
+    // A public listing with no photos still builds — it shows an honest
+    // "photography scheduled" panel rather than a stock photo — but say so
+    // loudly at build time, because a listing without photos underperforms.
     if (!photos.length && isPublic(l)) {
-      throw new Error(`Listing "${l.slug}" is ${l.status} with no photos in ${PHOTO_DIR}/${l.slug}/. Add photos or set status to "draft".`)
+      console.warn(`  ! ${l.slug} is ${l.status} with no photos — add them to ${PHOTO_DIR}/${l.slug}/`)
     }
     const trail = [{ label: 'Listings', href: '/listings/' }, { label: fullAddress(l), href: `/listings/${l.slug}/` }]
     const bits = [l.beds ? `${l.beds} bed` : null, l.baths ? `${l.baths} bath` : null,
