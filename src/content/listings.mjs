@@ -486,6 +486,393 @@ export const LISTINGS = [
       'Current price and status',
     ],
   },
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // 2005 Davis Rd S · Salem (Davis Heights) — Marion County
+  // Source: RMLS #660749986 via two IDX mirrors, read 2026-10-03.
+  // ═══════════════════════════════════════════════════════════════════════════
+  {
+    slug: '2005-davis-rd-s',
+    status: 'active',
+    address: '2005 Davis Road S',
+    city: 'Salem',
+    state: 'OR',
+    zip: '97306',
+    county: 'Marion County',
+    area: null,                      // outside the corridor — no area guide
+    neighborhood: 'Davis Heights',
+    mls: '660749986',
+    price: 484600,
+    beds: 3,
+    baths: 2,
+    sqft: 1660,
+    acres: 0.13,
+    yearBuilt: 2019,
+    propertyType: 'Single-family residence',
+    taxes: 5302,
+    taxYear: '2025',
+    hoa: null,
+    listedOn: '2026-05-18',
+
+    kicker: 'South Salem · Davis Heights',
+    tagline: 'A 2019 single level in a Banner Homes neighborhood, with everything already done to it.',
+
+    description: [
+      'This one is off the corridor — South Salem, in Davis Heights, a Banner Homes neighborhood — and it is here because it is a genuinely good house, not because it is close to the river.',
+      'Built in 2019 and on one level: three bedrooms, two full baths, 1,660 square feet in an open plan built around a gas fireplace. The primary suite has vaulted ceilings, a dual vanity, a walk-in closet and a walk-in shower. LVP through the main rooms and new carpet in all three bedrooms.',
+      'The kitchen has quartz counters, a pantry, an island, and every appliance stays — refrigerator, range, dishwasher, microwave, and the washer and dryer with them. Forced-air gas heat, central air, double-pane windows, cement board siding, two-car attached garage, fenced yard with a covered patio and sprinklers.',
+      'Six years old means the expensive things are not due yet, and it is on public sewer rather than septic — which, after a few years of selling rural property, I do not take for granted.',
+    ],
+
+    highlights: [
+      ['Built 2019', 'Six years old — the big-ticket items are not due'],
+      ['One level', '3 bed, 2 full bath, 1,660 sq ft, all on the main floor'],
+      ['Appliances included', 'Fridge, range, dishwasher, microwave, washer and dryer'],
+      ['Quartz kitchen', 'Island, pantry, built-in range and refrigerator'],
+      ['Central air + gas heat', 'Forced air, gas fireplace, double-pane windows'],
+      ['No HOA', 'Fenced yard, covered patio, sprinklers, 2-car garage'],
+    ],
+
+    factGroups: [
+      ['Structure', [
+        ['Style', 'One story'],
+        ['Year built', '2019'],
+        ['Living area', '1,660 sq ft (all main level, per RLID)'],
+        ['Bedrooms', '3'],
+        ['Bathrooms', '2 full'],
+        ['Garage', '2-car attached'],
+        ['Basement', 'Partial, unfinished, exterior entry'],
+        ['Foundation', 'Concrete perimeter'],
+        ['Roof', 'Composition'],
+        ['Siding', 'Cement board'],
+        ['Windows', 'Double pane'],
+        ['Heating', 'Forced air, gas'],
+        ['Cooling', 'Central air'],
+        ['Fireplace', 'One, gas'],
+        ['Flooring', 'Luxury vinyl plank and wall-to-wall carpet'],
+        ['Accessibility', 'Ground level, garage on main'],
+      ]],
+      ['Land & systems', [
+        ['Lot size', '5,662 sq ft (0.13 acres)'],
+        ['Sewer', 'Public sewer'],
+        ['Hot water', 'Gas'],
+        ['Outdoor', 'Covered patio, fenced, garden, sprinkler system'],
+        ['Zoning', 'RS'],
+      ]],
+      ['Financial & legal', [
+        ['List price', '$484,600'],
+        ['Property taxes', '$5,302.14 (2025)'],
+        ['HOA', 'None'],
+        ['County', 'Marion County'],
+        ['Tax ID', '355428'],
+        ['MLS #', '660749986'],
+        ['Listing terms', 'Cash, conventional, FHA, VA'],
+      ]],
+    ],
+
+    panel: null,
+
+    features: {
+      Interior: ['Quartz countertops', 'Kitchen island and pantry', 'Built-in range and refrigerator', 'All appliances included', 'Washer and dryer included', 'High ceilings', 'Ceiling fan', 'Vaulted primary suite', 'Walk-in closet', 'Dual vanity', 'Walk-in shower'],
+      Exterior: ['Covered patio', 'Fenced yard', 'Garden', 'Sprinkler system', '2-car attached garage', 'Cement board siding'],
+    },
+
+    schools: [
+      ['Elementary', 'Schirle Elementary', 'Salem-Keizer SD 24J'],
+      ['Middle', 'Crossler Middle School', 'Salem-Keizer SD 24J'],
+      ['High', 'Sprague High School', 'Salem-Keizer SD 24J'],
+    ],
+
+    listedBy: 'Daniel Gandee & George Winters, Real Broker LLC',
+    verify: ['Current price and status', 'School assignment with Salem-Keizer SD 24J'],
+  },
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // Holiday Farm RV Resort — three DEEDED RV sites, Blue River.
+  // Not park models, not a land lease: you own the site, HOA is $245/mo.
+  // Sources: RMLS #780474229 / #440628986 / #672015375, read 2026-10-03.
+  // ═══════════════════════════════════════════════════════════════════════════
+  {
+    slug: '54432-mckenzie-hwy-9',
+    status: 'active',
+    address: '54432 McKenzie Highway',
+    unit: 'Site 9',
+    city: 'Blue River',
+    state: 'OR',
+    zip: '97413',
+    county: 'Lane County',
+    area: 'blue-river',
+    neighborhood: 'Holiday Farm RV Resort',
+    mls: '780474229',
+    price: 65500,
+    beds: null, baths: null, sqft: null, acres: null, yearBuilt: null,
+    propertyType: 'Deeded RV site — residential recreational',
+    taxes: 306,
+    taxYear: '2025',
+    hoa: '$245/month — includes water, sewer and garbage',
+    listedOn: '2026-08-14',
+
+    kicker: 'Blue River · Holiday Farm RV Resort',
+    tagline: 'A deeded RV site on the McKenzie — you own the dirt, not a space rental.',
+
+    description: [
+      'This is ground you own. Not a space you rent, not a park model on leased land — a deeded recreational site inside Holiday Farm RV Resort, with full water, power and sewer hookups already in and a roughly 10 by 12 wood storage shed on it.',
+      'That distinction is the whole point. A land-lease space costs you rent forever and finances like a car. A deeded site is real property: it has its own tax lot, it has a deed, and the monthly number is a $245 HOA that covers water, sewer and garbage rather than rent that can be raised on you.',
+      'The resort carries the amenities — walking paths, fishing ponds, waterways, a dog park, lodge, hot showers, laundry and a community space. Propane and firewood are sold on site. Tokatee is up the highway, and the rafting, fishing, hiking and hunting are all out the door.',
+      'Plan on cash. Lenders generally will not write a mortgage on a recreational site, which is also why these trade quietly and why the buyer pool is small.',
+    ],
+
+    highlights: [
+      ['Deeded, not leased', 'You own the site — it has its own tax lot'],
+      ['$245/month HOA', 'Covers water, sewer and garbage'],
+      ['Hookups in place', 'Full water, power and sewer'],
+      ['Storage shed', 'Approximately 10 ft × 12 ft, wood'],
+      ['Resort amenities', 'Lodge, ponds, trails, dog park, showers, laundry'],
+      ['Cash purchase', 'Recreational sites rarely qualify for a mortgage'],
+    ],
+
+    factGroups: [
+      ['The site', [
+        ['Type', 'Deeded RV site — residential recreational'],
+        ['Resort', 'Holiday Farm RV Resort'],
+        ['Hookups', 'Water, power and sewer'],
+        ['Improvements', 'Wood storage shed, approximately 10 ft × 12 ft'],
+        ['Setting', 'Treed, paved access'],
+        ['Lot size', 'Not stated in the RMLS record — ask'],
+      ]],
+      ['Ownership & costs', [
+        ['Ownership', 'Deeded — you hold title to the site'],
+        ['HOA dues', '$245 per month'],
+        ['Dues include', 'Water, sewer, garbage'],
+        ['Also on site', 'Propane and firewood available for purchase'],
+        ['Amenities', 'Cable TV, commons, laundry, lodge, showers, dog park, ponds, trails'],
+        ['Property taxes', '$306.01 (2025) — confirm with Lane County'],
+      ]],
+      ['Financial & legal', [
+        ['List price', '$65,500'],
+        ['County', 'Lane County'],
+        ['Zoning', 'RC'],
+        ['Tax ID / map', '1806924 · 16-55-20-22-90009'],
+        ['MLS #', '780474229'],
+        ['Listing terms', 'Cash'],
+      ]],
+    ],
+
+    panel: {
+      kind: 'rv',
+      intro: 'A deeded recreational site is its own animal — not a house, not a park model on rented ground. Here is what actually governs it.',
+      items: [
+        ['You own it', 'Deeded site with its own tax lot',
+          'This is real property. There is a deed, a tax account and a title company, and nobody can raise your rent or decline to renew your space. That is the single biggest difference from the park-model listings a few miles down the highway.'],
+        ['The monthly number', '$245 HOA, covering water, sewer and garbage',
+          'Ask for the HOA budget, the reserve study and the minutes before you write. These dues went from $185 to $245 a month between the 2024 listings and today, so look at the trend, not just the figure.'],
+        ['Financing', 'Plan on cash',
+          'Most lenders will not write a conventional mortgage on a recreational site. Some credit unions do recreational-land lending — worth one phone call — but price the deal as a cash purchase and treat financing as the upside.'],
+        ['Using it', 'Read the resort rules first',
+          'Occupancy limits, how long an RV may stay, what you may build, and whether you may rent it out are all resort rules, not state law. Get them in writing during your inspection period — especially if rental income is part of your math.'],
+        ['Resale', 'A small, cash buyer pool',
+          'These sell to a specific person at a specific time of year. That cuts both ways: you buy well in the off season, and you plan on a patient sale when you exit.'],
+        ['Taxes', 'Low, but verify the figure',
+          'The RMLS record shows $306.01 for 2025 — the same figure appears on all three sites at this resort, so confirm your parcel against the Lane County assessor rather than relying on the listing.'],
+      ],
+    },
+
+    features: null,
+    schools: [
+      ['Elementary', 'McKenzie River Community School', 'McKenzie SD 68'],
+      ['Middle', 'McKenzie River Community School', 'McKenzie SD 68'],
+      ['High', 'McKenzie High School', 'McKenzie SD 68'],
+    ],
+    listedBy: 'Daniel Gandee & George Winters, Real Broker LLC',
+    verify: ['The tax figure against the Lane County assessor', 'Site dimensions', 'Current resort rules on rentals and occupancy', 'Current price and status'],
+  },
+
+  {
+    slug: '54432-mckenzie-hwy-23',
+    status: 'active',
+    address: '54432 McKenzie Highway',
+    unit: 'Site 23',
+    city: 'Blue River',
+    state: 'OR',
+    zip: '97413',
+    county: 'Lane County',
+    area: 'blue-river',
+    neighborhood: 'Holiday Farm RV Resort',
+    mls: '440628986',
+    price: 80500,
+    beds: null, baths: null, sqft: null, acres: null, yearBuilt: null,
+    propertyType: 'Deeded RV site with a 2015 fifth-wheel included',
+    taxes: 306,
+    taxYear: '2025',
+    hoa: '$245/month — includes water, sewer and garbage',
+    listedOn: '2026-08-14',
+
+    kicker: 'Blue River · Holiday Farm RV Resort',
+    tagline: 'The turn-key one: a deeded site with a 2015 Montana 41-footer already on it.',
+
+    description: [
+      'Site 23 is the one you can use this weekend. It is a deeded recreational site at Holiday Farm RV Resort — you own the ground — and the sale includes a 2015 Montana 41-foot fifth wheel with four slide-outs and a washer and dryer in it.',
+      'Full water, sewer and power are hooked up. Against the bare sites at this resort you are paying roughly fifteen thousand more and getting the RV, which is the difference between owning a place to park something and owning somewhere to sleep on Friday night.',
+      'Dues are $245 a month and cover water, sewer and garbage. The resort side gives you the lodge, hot showers, a laundromat, a community space, walking trails, fishing ponds, waterways and a dog park, with propane and firewood sold on site.',
+      'The listing points at short-term rental potential. Before you buy on that basis, get the resort rules in writing — what a resort permits today it can change, and rental income is the first thing those rules touch.',
+    ],
+
+    highlights: [
+      ['RV included', '2015 Montana 41 ft, four slide-outs, washer and dryer'],
+      ['Deeded site', 'You own the ground, with its own tax lot'],
+      ['$245/month HOA', 'Water, sewer and garbage covered'],
+      ['Hooked up', 'Full water, sewer and power'],
+      ['Resort amenities', 'Lodge, ponds, trails, dog park, showers, laundry'],
+      ['Minutes to Tokatee', 'Rafting, fishing, hiking and hunting out the door'],
+    ],
+
+    factGroups: [
+      ['The site & the RV', [
+        ['Type', 'Deeded RV site — residential recreational'],
+        ['Resort', 'Holiday Farm RV Resort, site 23'],
+        ['RV included', '2015 Montana, 41 ft, four slide-outs'],
+        ['In the RV', 'Washer and dryer'],
+        ['Hookups', 'Water, sewer and power'],
+        ['Lot size', 'Not stated in the RMLS record — ask'],
+      ]],
+      ['Ownership & costs', [
+        ['Ownership', 'Deeded — you hold title to the site'],
+        ['HOA dues', '$245 per month'],
+        ['Dues include', 'Water, sewer, garbage'],
+        ['Amenities', 'Lodge, hot showers, laundromat, community space, trails, ponds, dog park'],
+        ['Also on site', 'Propane and firewood available for purchase'],
+        ['Property taxes', '$306.01 (2025) — confirm with Lane County'],
+      ]],
+      ['Financial & legal', [
+        ['List price', '$80,500'],
+        ['County', 'Lane County'],
+        ['Zoning', 'RC'],
+        ['Tax ID / map', '1807062 · 16-55-20-22-90023'],
+        ['MLS #', '440628986'],
+        ['Listing terms', 'Cash'],
+      ]],
+    ],
+
+    panel: {
+      kind: 'rv',
+      intro: 'You are buying two things here — a deeded piece of ground and a ten-year-old fifth wheel. They behave very differently, and only one of them appreciates.',
+      items: [
+        ['The site', 'Deeded, with its own tax lot',
+          'Real property with a deed and a title company. No space rent, no lease renewal, nobody deciding whether you may stay.'],
+        ['The RV', 'A 2015 Montana — a depreciating asset',
+          'Have the roof, the seals, the slide mechanisms, the tires and the appliances looked at by an RV tech, not a home inspector. Slide-outs and roof seals are where the money goes on a unit this age.'],
+        ['The monthly number', '$245 HOA covering water, sewer and garbage',
+          'Ask for the budget, the reserves and recent minutes. Dues rose from $185 to $245 between the 2024 listings and now.'],
+        ['Financing', 'Plan on cash',
+          'A conventional mortgage will not attach to this. RV lending exists for the unit itself, but the land and the trailer are different collateral — talk to a lender before you count on borrowing.'],
+        ['Rental income', 'Verify before you rely on it',
+          'The listing notes short-term rental potential. Whether you can actually rent it, for how long, and through whom is governed by resort rules and Lane County — get all of it in writing during the inspection period.'],
+        ['Title', 'Two transfers, not one',
+          'The site conveys by deed; the RV conveys by title or bill of sale. Make sure your escrow handles both, or you will own ground with somebody else\'s trailer on it.'],
+      ],
+    },
+
+    features: null,
+    schools: [
+      ['Elementary', 'McKenzie River Community School', 'McKenzie SD 68'],
+      ['Middle', 'McKenzie River Community School', 'McKenzie SD 68'],
+      ['High', 'McKenzie High School', 'McKenzie SD 68'],
+    ],
+    listedBy: 'Daniel Gandee & George Winters, Real Broker LLC',
+    verify: ['The tax figure against the Lane County assessor', 'Resort rules on short-term rental', 'RV condition and service history', 'Current price and status'],
+  },
+
+  {
+    slug: '54432-mckenzie-hwy-24',
+    status: 'active',
+    address: '54432 McKenzie Highway',
+    unit: 'Site 24',
+    city: 'Blue River',
+    state: 'OR',
+    zip: '97413',
+    county: 'Lane County',
+    area: 'blue-river',
+    neighborhood: 'Holiday Farm RV Resort',
+    mls: '672015375',
+    price: 53500,
+    beds: null, baths: null, sqft: null, acres: null, yearBuilt: null,
+    propertyType: 'Deeded RV site — residential recreational',
+    taxes: 306,
+    taxYear: '2025',
+    hoa: '$245/month — includes water, sewer and garbage',
+    listedOn: '2026-08-11',
+
+    kicker: 'Blue River · Holiday Farm RV Resort',
+    tagline: 'The cheapest way to own real property on the upper McKenzie.',
+
+    description: [
+      'Site 24 is the least expensive of the three deeded sites at Holiday Farm RV Resort, and it is bare ground with the hookups in — water, power and sewer already available.',
+      'At this number you are buying a deed on the upper McKenzie for less than the price of a used truck. It has its own tax lot and its own tax bill, and the $245 monthly HOA covers water, sewer and garbage rather than renting you a space.',
+      'The resort does the rest: lodge, dog park, trails, fishing ponds, waterways, hot showers, laundry and a community gathering space, with propane and firewood sold on site. Tokatee, the restaurants and the coffee are a short drive, and the rafting and fishing are immediate.',
+      'Bring your own trailer, or buy site 23 up the road where one is already parked. Either way, plan on paying cash.',
+    ],
+
+    highlights: [
+      ['Lowest entry price', 'The cheapest deeded site of the three'],
+      ['Deeded ownership', 'Your own tax lot and tax bill'],
+      ['$245/month HOA', 'Water, sewer and garbage included'],
+      ['Hookups available', 'Water, power and sewer'],
+      ['Resort amenities', 'Lodge, dog park, trails, ponds, showers, laundry'],
+      ['Bring your own rig', 'Or look at site 23, which includes one'],
+    ],
+
+    factGroups: [
+      ['The site', [
+        ['Type', 'Deeded RV site — residential recreational'],
+        ['Resort', 'Holiday Farm RV Resort, site 24'],
+        ['Hookups', 'Water, power and sewer available'],
+        ['Improvements', 'None — bare site'],
+        ['Lot size', 'Not stated in the RMLS record — ask'],
+      ]],
+      ['Ownership & costs', [
+        ['Ownership', 'Deeded — you hold title to the site'],
+        ['HOA dues', '$245 per month'],
+        ['Dues include', 'Water, sewer, garbage'],
+        ['Amenities', 'Lodge, dog park, trails, fishing ponds, hot showers, laundry, community space'],
+        ['Also on site', 'Propane and firewood available for purchase'],
+        ['Property taxes', '$306.01 (2025) — confirm with Lane County'],
+      ]],
+      ['Financial & legal', [
+        ['List price', '$53,500'],
+        ['County', 'Lane County'],
+        ['Zoning', 'RC'],
+        ['Tax ID / map', '1807070 · 16-55-20-22-90024'],
+        ['MLS #', '672015375'],
+        ['Listing terms', 'Cash'],
+      ]],
+    ],
+
+    panel: {
+      kind: 'rv',
+      intro: 'The cheapest listing on this site is still real property, and it still deserves the same four questions.',
+      items: [
+        ['You own it', 'Deeded site, own tax lot',
+          'Title, deed, escrow, property tax bill — all the machinery of real ownership, at a price most people associate with renting a space.'],
+        ['The monthly number', '$245 HOA covering water, sewer and garbage',
+          'That is roughly $2,940 a year against a $53,500 purchase, so the dues matter to the math more than the price does. Ask for the budget and the reserve study, and note dues rose from $185 in 2024.'],
+        ['Financing', 'Plan on cash',
+          'Recreational sites do not generally qualify for a conventional mortgage. At this price most buyers pay cash, which is also your negotiating advantage.'],
+        ['What you may put on it', 'Resort rules decide',
+          'Rig age and size limits, how long you may stay, whether anything may be built, and rental rules are all in the resort documents. Read them during the inspection period, before you buy a trailer to put here.'],
+        ['Taxes', 'Low, but verify',
+          'The record shows $306.01 for 2025, identical to the other two sites — confirm your parcel with the Lane County assessor.'],
+      ],
+    },
+
+    features: null,
+    schools: [
+      ['Elementary', 'McKenzie River Community School', 'McKenzie SD 68'],
+      ['Middle', 'McKenzie River Community School', 'McKenzie SD 68'],
+      ['High', 'McKenzie High School', 'McKenzie SD 68'],
+    ],
+    listedBy: 'Daniel Gandee & George Winters, Real Broker LLC',
+    verify: ['The tax figure against the Lane County assessor', 'Site dimensions', 'Resort rules on rig size, occupancy and rentals', 'Current price and status'],
+  },
 ]
 
 // Only these statuses are public; everything else builds as a noindex preview.
