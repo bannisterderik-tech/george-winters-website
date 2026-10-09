@@ -1,4 +1,5 @@
-/* Off-market registration form → Supabase (insert-only table, publishable key).
+/* Off-market registration form → Supabase (insert-only table, publishable key)
+   and George's Follow Up Boss (through the george-fub-lead function).
    No dependencies. Validates in the browser, but the database constraints are
    the real gate: email shape, phone digit count and field lengths are enforced
    server-side too. */
@@ -68,36 +69,40 @@
     btn.disabled = true
     btn.textContent = 'Sending…'
 
-    try {
-      var res = await fetch(cfg.url + '/rest/v1/' + cfg.table, {
-        method: 'POST',
-        headers: {
-          'apikey': cfg.key,
-          'Authorization': 'Bearer ' + cfg.key,
-          'Content-Type': 'application/json',
-          'Prefer': 'return=minimal'
-        },
-        body: JSON.stringify(row)
-      })
-
-      if (res.status === 201 || res.status === 204) {
-        form.hidden = true
-        done.hidden = false
-        done.scrollIntoView({ behavior: 'smooth', block: 'start' })
-        return
-      }
-
-      var body = await res.text()
+    // The table keeps the consent record, Follow Up Boss puts the lead in
+    // front of George. Each goes on its own; thank them as soon as either
+    // takes it, and only call it a failure if both refuse.
+    var body = JSON.stringify(row)
+    var toTable = fetch(cfg.url + '/rest/v1/' + cfg.table, {
+      method: 'POST',
+      headers: {
+        'apikey': cfg.key,
+        'Authorization': 'Bearer ' + cfg.key,
+        'Content-Type': 'application/json',
+        'Prefer': 'return=minimal'
+      },
+      body: body
+    }).then(async function (res) {
+      if (res.status === 201 || res.status === 204) return
       // Already registered with this email — that is a success, not an error.
-      if (res.status === 409 || /duplicate key/i.test(body)) {
-        form.hidden = true
-        done.hidden = false
-        done.scrollIntoView({ behavior: 'smooth', block: 'start' })
-        return
-      }
-      fail('That did not send. Call or text George at 541-870-8378 and he will add you himself.')
+      if (res.status === 409 || /duplicate key/i.test(await res.text())) return
+      throw new Error(res.status)
+    })
+    var toFub = fetch(cfg.fubUrl, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: body
+    }).then(function (res) { if (!res.ok) throw new Error(res.status) })
+
+    try {
+      await Promise.any([toTable, toFub])
+      form.hidden = true
+      done.hidden = false
+      done.scrollIntoView({ behavior: 'smooth', block: 'start' })
     } catch (err) {
-      fail('That did not send — you may be offline. Call or text George at 541-870-8378 and he will add you himself.')
+      fail(navigator.onLine === false
+        ? 'That did not send — you may be offline. Call or text George at 541-870-8378 and he will add you himself.'
+        : 'That did not send. Call or text George at 541-870-8378 and he will add you himself.')
     }
   })
 })()

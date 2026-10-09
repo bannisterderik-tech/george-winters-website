@@ -174,7 +174,7 @@ ${crumbs(trail)}
   </div>
 </div></section>
 
-<script>window.__pocket=${JSON.stringify({ url: POCKET.supabaseUrl, key: POCKET.supabaseKey, table: POCKET.table, sms: POCKET.smsConsentText, ack: POCKET.agreementAckText })};</script>
+<script>window.__pocket=${JSON.stringify({ url: POCKET.supabaseUrl, key: POCKET.supabaseKey, table: POCKET.table, fubUrl: POCKET.fubUrl, sms: POCKET.smsConsentText, ack: POCKET.agreementAckText })};</script>
 <script src="${url('/assets/js/pocket.js')}" defer></script>`
 
   emit('/pocket/', shell(page, body, [crumbSchema(trail)]))

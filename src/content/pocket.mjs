@@ -21,6 +21,9 @@ export const POCKET = {
   // Publishable (anon) key — safe in client code; RLS allows insert only.
   supabaseKey: 'sb_publishable_iAYm8Fu4CcqVryO_6KTw0g_xN0p_Gag',
   table: 'pocket_signups',
+  // Each registration also goes to George's Follow Up Boss through this
+  // function, which holds his FUB key server-side. Nothing secret here.
+  fubUrl: 'https://ihtulpiskizqofyhxsux.supabase.co/functions/v1/george-fub-lead',
 
   // The exact wording stored with each registration, so consent is provable
   // later. Change the text and the stored copy changes with it.
