@@ -780,9 +780,9 @@ ${crumbs([{ label: g.crumb }])}
     ${checksList(g.points)}
     <p>Written by me for the McKenzie Valley, Springfield to McKenzie Bridge. Keep it, write in it, and <a href="${AGENT.phoneHref}">text me at ${AGENT.phone}</a> when a page raises a question.</p>
   </div>
-  <figure class="hero-photo">
-    <img src="${url(g.cover)}" alt="The cover of the ${esc(g.name)}" width="935" height="1210" loading="lazy">
-    <figcaption class="tag">${esc(g.kicker.replace('Free guide · ', ''))} · PDF</figcaption>
+  <figure style="margin:0;align-self:start;max-width:420px;justify-self:center">
+    <img src="${url(g.cover)}" alt="The cover of the ${esc(g.name)}" width="935" height="1210" style="display:block;width:100%;height:auto;border-radius:6px;box-shadow:0 18px 40px rgba(15,26,6,.18),0 2px 6px rgba(15,26,6,.12)">
+    <figcaption class="tag" style="margin-top:12px">${esc(g.kicker.replace('Free guide · ', ''))} · PDF</figcaption>
   </figure>
 </div></section>
 ${leadSection('guide', {
