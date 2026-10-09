@@ -8,6 +8,7 @@ const opts = (list) => list.map((o) => `<option value="${esc(o)}">${esc(o)}</opt
 export function buildPocket(emit) {
   const page = {
     path: '/pocket/',
+    bandForm: false,
     title: "Off-Market Property up the McKenzie | George Winters' Private List",
     description:
       'Most of what sells on the McKenzie River corridor never reaches a portal. Register for George Winters’ off-market list — estates, pre-market listings and quiet sellers from Springfield to McKenzie Bridge.',

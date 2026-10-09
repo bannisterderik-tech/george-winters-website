@@ -2,8 +2,10 @@
 import { createHash } from 'node:crypto'
 import { readFileSync } from 'node:fs'
 import { SITE, AGENT, NAV, url, abs } from './config.mjs'
+import { leadForm } from './lead-form.mjs'
 
 const CSS_V = createHash('md5').update(readFileSync('assets/css/site.css')).digest('hex').slice(0, 8)
+const LEAD_V = createHash('md5').update(readFileSync('assets/js/lead.js')).digest('hex').slice(0, 8)
 
 export const esc = (s) => String(s ?? '')
   .replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;')
@@ -29,7 +31,9 @@ export const ctaButtons = (dark = false) => `
   <a class="btn btn-ghost" href="${AGENT.phoneHref}">${phoneIcon} Call or text ${AGENT.phone}</a>
 </div>`
 
-export const agentBand = (heading = 'Talk to the neighbor first.', body = `Straight answers about buying or selling anywhere on the corridor — Springfield to McKenzie Bridge. No pressure, no jargon.`) => `
+// withForm adds the quick note form; pages that already carry their own lead
+// form turn it off (page.bandForm === false) so there is only one per page.
+export const agentBand = (heading = 'Talk to the neighbor first.', body = `Straight answers about buying or selling anywhere on the corridor — Springfield to McKenzie Bridge. No pressure, no jargon.`, withForm = true) => `
 <section class="band"><div class="wrap">
   <div class="agent-band">
     <img src="${url(AGENT.headshot)}" alt="${esc(AGENT.name)}, Realtor serving the McKenzie River Valley" width="86" height="86" loading="lazy">
@@ -39,6 +43,14 @@ export const agentBand = (heading = 'Talk to the neighbor first.', body = `Strai
     </div>
     ${ctaButtons(true)}
   </div>
+  ${withForm ? `<div class="band-note">
+    <div class="band-note-intro">
+      <span class="kicker">Or leave a note</span>
+      <h2>Rather type than talk?</h2>
+      <p>Tell me what you are after and how to reach you. It comes straight to me, not a call center.</p>
+    </div>
+    <div>${leadForm('note')}</div>
+  </div>` : ''}
 </div></section>`
 
 // ---------- FAQ ----------
@@ -168,7 +180,7 @@ export function shell(page, bodyHtml, schemas = []) {
 <main id="main">
 ${bodyHtml}
 </main>
-${agentBand()}
+${agentBand(undefined, undefined, page.bandForm !== false)}
 <footer class="site-foot">
   <div class="wrap top">
     <div class="brand">
@@ -208,5 +220,6 @@ ${agentBand()}
     <span><a href="${url('/terms/')}">Terms</a> · <a href="${url('/privacy/')}">Privacy</a> · <a href="${url('/accessibility/')}">Accessibility</a> · <a href="${url('/do-not-sell/')}">Do Not Sell or Share</a> · <a href="${url('/fair-housing/')}">Fair Housing</a></span>
   </div>
 </footer>
+<script src="${url('/assets/js/lead.js')}?v=${LEAD_V}" defer></script>
 </body></html>`
 }

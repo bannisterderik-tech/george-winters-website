@@ -3,6 +3,7 @@
 import fs from 'node:fs'
 import { AGENT, url, abs } from './config.mjs'
 import { shell, esc, riverLine, currentLines, crumbs, crumbSchema } from './templates.mjs'
+import { leadSection } from './lead-form.mjs'
 import { LISTINGS, PUBLIC_STATUSES, STATUS_LABEL } from './content/listings.mjs'
 import { AREAS } from './content/areas.mjs'
 
@@ -44,11 +45,13 @@ const priceLine = (l) => l.status === 'sold' && l.soldPrice
   ? `${money(l.soldPrice)} <span class="was">sold${l.soldDate ? ` ${l.soldDate}` : ''}</span>`
   : money(l.price)
 
-// ── Showing CTAs: no fake form, the same three real ways to reach George ─────
+// ── Showing CTAs: the showing form further down the page, plus the real ways
+// to reach George. A sold listing has nothing to show, so it keeps the rest.
 const showingCtas = (l) => {
   const body = encodeURIComponent(`Hi George — I'd like to see ${fullAddress(l)} in ${l.city}.`)
-  return `<div class="btn-row">
-  <a class="btn btn-solid" href="${AGENT.bookUrl}" rel="noopener">Book a showing time</a>
+  return `<div class="btn-row">${l.status === 'sold' ? '' : `
+  <a class="btn btn-solid" href="#get-in-touch">Ask for a showing</a>`}
+  <a class="btn ${l.status === 'sold' ? 'btn-solid' : 'btn-ghost'}" href="${AGENT.bookUrl}" rel="noopener">Book a showing time</a>
   <a class="btn btn-ghost" href="${AGENT.smsHref}?&body=${body}">Text about this listing</a>
   <a class="btn btn-ghost" href="${AGENT.phoneHref}">Call ${AGENT.phone}</a>
 </div>`
@@ -367,6 +370,8 @@ ${crumbs([{ label: 'Listings', href: '/listings/' }])}
       noindex: !isPublic(l),
       ogImg: photos[0] || null,
       ogAlt: `${fullAddress(l)}, ${cityLine(l)}`,
+      // The showing form is this page's lead form; no second one in the footer.
+      bandForm: l.status === 'sold',
     }
     const draftBar = isPublic(l) ? '' : `
 <div class="draft-bar"><div class="wrap">
@@ -387,12 +392,19 @@ ${crumbs([{ label: 'Listings', href: '/listings/' }])}
       featuresSection(l),
       paymentSection(l),
       locationSection(l),
-      `<section class="band"><div class="wrap"><div class="showing">
-         <span class="kicker">See it</span>
-         <h2>Walk it with the guy who lives here.</h2>
-         <p class="lede">I will meet you at the property, tell you what I would check, and say so if it is wrong for you. That is the whole pitch.</p>
+      l.status === 'sold'
+        ? `<section class="band"><div class="wrap"><div class="showing">
+         <span class="kicker">Sold</span>
+         <h2>Want one like it?</h2>
+         <p class="lede">This one is gone. Tell me what you liked about it and I will call you when the next one comes up, often before it is listed.</p>
          ${showingCtas(l)}
-       </div></div></section>`,
+       </div></div></section>`
+        : leadSection('showing', {
+            kicker: 'See it',
+            heading: 'Walk it with the guy who lives here.',
+            lede: 'I will meet you at the property, tell you what I would check, and say so if it is wrong for you. That is the whole pitch.',
+            points: [`${esc(fullAddress(l))}, ${esc(cityLine(l))}${l.mls ? ` · RMLS #${esc(l.mls)}` : ''}`, 'Prefer to talk? Call or text ' + AGENT.phone + '.'],
+          }, { ...l, address: fullAddress(l) }),
       otherListings(l),
       disclosureSection(l),
       `<script src="${url('/assets/js/listing.js')}" defer></script>`,

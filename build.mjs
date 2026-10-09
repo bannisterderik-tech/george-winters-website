@@ -10,6 +10,7 @@ import { AREAS } from './src/content/areas.mjs'
 import { GUIDES, GUIDE_CATS } from './src/content/guides.mjs'
 import { buildListings, draftPaths } from './src/listings-build.mjs'
 import { buildPocket } from './src/pocket-build.mjs'
+import { leadSection, leadForm } from './src/lead-form.mjs'
 
 const OUT = 'docs'
 const pages = []
@@ -30,6 +31,7 @@ function buildHome() {
     title: 'George Winters · McKenzie River Valley Realtor | Springfield to McKenzie Bridge, Oregon',
     description: 'Local Realtor for the McKenzie River corridor: Springfield, Walterville, Leaburg, Vida, Blue River, McKenzie Bridge & more. Riverfront, rural, and land expertise. Call/text 541-870-8378.',
     img: '/assets/img/mckenzie-river-3.jpg',
+    bandForm: false,
   }
   const areaTiles = AREAS.map((a) => `
     <a class="tile photo-tile" href="${url(`/areas/${a.slug}/`)}">
@@ -99,11 +101,16 @@ function buildHome() {
   </div>
 </div></section>
 
-<section class="band band-ink">${currentLines.replace('current-lines', 'current-lines')} <div class="wrap" style="position:relative">
-  <span class="kicker">Sellers</span>
-  <h2>What is your place on the river actually worth?</h2>
-  <p class="lede" style="color:rgba(238,243,227,.75)">Not the algorithm's guess — a real number, from comps walked in person by a neighbor who knows what buyers pay for frontage, systems, and quiet. Free, no obligation.</p>
-  ${ctaButtons(true)}
+<section class="band band-ink" id="get-in-touch">${currentLines.replace('current-lines', 'current-lines')} <div class="wrap" style="position:relative">
+  <div class="pocket-form-wrap">
+    <div class="pf-intro">
+      <span class="kicker">Sellers</span>
+      <h2>What is your place on the river actually worth?</h2>
+      <p class="lede" style="color:rgba(238,243,227,.75)">Not the algorithm's guess — a real number, from comps walked in person by a neighbor who knows what buyers pay for frontage, systems, and quiet. Free, no obligation.</p>
+      ${ctaButtons(true)}
+    </div>
+    <div>${leadForm('valuation')}</div>
+  </div>
 </div></section>`
 
   emit(page.path, shell(page, body, [crumbSchema([])]))
@@ -359,6 +366,7 @@ ${crumbs([{ label: 'About George' }])}
     title: 'Buy a Home on the McKenzie River Corridor | Buyer’s Guide & Local Agent',
     description: 'Buying in the McKenzie Valley — riverfront, rural, and in-town. How the process works out here, what to inspect, and how George Winters guides buyers from Springfield to McKenzie Bridge.',
     img: '/assets/img/mckenzie-bridge-1.jpg',
+    bandForm: false,
   }
   emit(buy.path, shell(buy, `
 ${crumbs([{ label: 'Buy' }])}
@@ -378,6 +386,12 @@ ${crumbs([{ label: 'Buy' }])}
   </ol>
   ${ctaButtons()}
 </div></section>
+${leadSection('buyer', {
+    kicker: 'Start here',
+    heading: 'Tell me what you are hunting for.',
+    lede: 'Where, how much, and what has to be true about it. I will send what fits, including what never makes it to the portals.',
+    points: ['No drip campaign. You hear from me when something fits.', 'Nothing here commits you to anything.', 'Already working with another broker? Say so and I will stay out of it.'],
+  }, null, 'band band-tint')}
 ${related([
     { href: '/guides/buying/', label: 'All buying guides' },
     { href: '/guides/first-time/', label: 'First-time buyer guides' },
@@ -393,6 +407,7 @@ ${related([
     title: 'Sell Your McKenzie Valley Home | Rural & Riverfront Listing Expertise',
     description: 'Selling on the McKenzie corridor takes more than a sign: honest local pricing, records preparation, and marketing that reaches river-minded buyers everywhere. How George Winters sells the valley.',
     img: '/assets/img/goodpasture-bridge-2.jpg',
+    bandForm: false,
   }
   emit(sell.path, shell(sell, `
 ${crumbs([{ label: 'Sell' }])}
@@ -412,6 +427,12 @@ ${crumbs([{ label: 'Sell' }])}
   </ol>
   ${ctaButtons()}
 </div></section>
+${leadSection('valuation', {
+    kicker: 'Your number',
+    heading: 'What is your place worth?',
+    lede: 'Give me the address and I will pull the comps and the county records, then come walk it. A real number, free, no obligation.',
+    points: ['Priced standing on the property, not by an algorithm.', 'You get the number whether or not you list with me.', 'Your details are never sold or handed to a lead vendor.'],
+  }, null, 'band band-tint')}
 ${related([
     { href: '/guides/selling/', label: 'All selling guides' },
     { href: '/guides/selling/pricing-rural-property/', label: 'Pricing rural property' },
@@ -500,7 +521,8 @@ ${related([
   const contact = {
     path: '/contact/',
     title: 'Contact George Winters — McKenzie Valley Realtor | 541-870-8378',
-    description: 'Reach George Winters: call or text 541-870-8378, email george@theoperativegroup.com, or book a time online. Serving Springfield to McKenzie Bridge, Oregon.',
+    description: 'Reach George Winters: call or text 541-870-8378, email george@theoperativegroup.com, send a message, or book a time online. Serving Springfield to McKenzie Bridge, Oregon.',
+    bandForm: false,
   }
   emit(contact.path, shell(contact, `
 ${crumbs([{ label: 'Contact' }])}
@@ -515,7 +537,13 @@ ${crumbs([{ label: 'Contact' }])}
     <strong>Book online:</strong> <a href="${AGENT.bookUrl}" rel="noopener">app.theoperativegroup.com/u/george-winters/book</a></p>
     <p class="small-caps-note">${esc(AGENT.name)} · ${esc(AGENT.team)} · ${esc(AGENT.brokerage)} · ${esc(AGENT.license)} · Equal Housing Opportunity</p>
   </div>
-</div>`, [crumbSchema([{ label: 'Contact' }])]))
+</div>
+${leadSection('contact', {
+    kicker: 'Send a message',
+    heading: 'Or write it down.',
+    lede: 'Tell me what you are after and how to reach you. It comes straight to me.',
+    points: ['I read these myself and answer the same day when I can.', 'Never sold or handed to a lead vendor.'],
+  }, null, 'band band-tint')}`, [crumbSchema([{ label: 'Contact' }])]))
 
   const credits = {
     path: '/credits/',
@@ -552,7 +580,7 @@ ${crumbs(trail)}
   <span class="kicker">${esc(p.kicker)}</span>
   <h1>${esc(p.h1)}</h1>
   <p class="lede">${esc(p.lede)}</p>
-  <p class="small-caps-note">Effective date: July 2026 · Contact: <a href="mailto:${AGENT.email}">${AGENT.email}</a> · ${AGENT.phone}</p>
+  <p class="small-caps-note">Effective date: ${p.effective || 'July 2026'} · Contact: <a href="mailto:${AGENT.email}">${AGENT.email}</a> · ${AGENT.phone}</p>
 </div>
 <section class="band" style="padding-top:0"><div class="wrap prose">
   ${sections.map((s) => `<h2>${esc(s.h)}</h2>${s.body.map((x) => `<p>${x}</p>`).join('')}${s.list ? `<ul>${s.list.map((i) => `<li>${i}</li>`).join('')}</ul>` : ''}`).join('')}
@@ -585,27 +613,32 @@ function buildLegal() {
   ])
 
   legalPage({
-    path: '/privacy/', crumb: 'Privacy Policy', kicker: 'Legal', h1: 'Privacy Policy',
+    path: '/privacy/', crumb: 'Privacy Policy', effective: 'October 2026', kicker: 'Legal', h1: 'Privacy Policy',
     title: 'Privacy Policy | George Winters — McKenzie River Valley Real Estate',
-    description: 'Privacy policy: this static site sets no cookies and collects no personal data directly. What is (and is not) collected, third-party services, and your rights.',
-    lede: 'The short version: this site sets no cookies, runs no trackers, and has no forms. What little data exists, explained honestly.',
+    description: 'Privacy policy: what the contact and lead forms collect and where it goes, why the site sets no cookies or trackers, third-party services, and your rights.',
+    lede: 'The short version: this site sets no cookies and runs no trackers. When you fill in a form, what you type goes to George, and here is exactly where it goes.',
   }, [
-    { h: 'What this site collects: essentially nothing', body: [
-      'This is a static informational website. It contains no contact forms, no login, no comment system, and no analytics or advertising trackers, and it sets no cookies of its own. Browsing this site does not send us your personal information.'] },
+    { h: 'Browsing: nothing', body: [
+      'This site has no login, no comment system, and no analytics or advertising trackers, and it sets no cookies of its own. Just reading it does not send us your personal information.'] },
+    { h: 'When you fill in a form', body: [
+      'The contact, showing, home value, buyer and off-market forms collect only what you type: your name, email and/or phone number, and whatever you tell us about the property or what you are looking for. Along with it we record the page you sent it from and, if you tick the box, your consent to calls and texts with the exact wording and the time you agreed.',
+      'That information goes to George Winters and The Operative Group and is stored in Follow Up Boss, the client-management system George uses, and for off-market registrations also in The Operative Group’s database (hosted by Supabase). It is used to answer you and provide real estate services. It is never sold or handed to a lead vendor.',
+      'Calls and texts happen only if you ticked the consent box, and you can reply STOP or ask George at any time to stop.'] },
     { h: 'Third-party services the site relies on', body: [ 'Serving any website involves some infrastructure. Ours:' ],
       list: [
         '<strong>Hosting (GitHub Pages)</strong> — pages are served by GitHub, whose servers receive standard web request data (IP address, browser type, pages requested) and maintain logs under GitHub’s own privacy policies.',
         '<strong>Fonts (Google Fonts)</strong> — typefaces load from Google’s servers, which receive your IP address as part of serving the files, governed by Google’s privacy policy.',
+        '<strong>Form delivery (Supabase and Follow Up Boss)</strong> — when you submit a form it is sent through a small server function at Supabase and stored in Follow Up Boss, each under its own privacy and security policies.',
         '<strong>Outbound links</strong> — booking links go to The Operative Group’s scheduling platform, and reference links go to government and other third-party sites. Each has its own privacy practices that apply once you leave this site.'] },
     { h: 'When you contact George directly', body: [
       'If you call, text, or email using the contact details on this site, the information you choose to share (name, contact details, property questions) is used to respond to you and provide real estate services, and may be retained in the client-management systems used by George and The Operative Group. It is not sold. Standard professional and legal record-keeping obligations for real estate licensees apply.'] },
     { h: 'Your rights', body: [
-      'Depending on where you live (including under the Oregon Consumer Privacy Act and the California Consumer Privacy Act as amended), you may have rights to access, correct, or delete personal information and to opt out of certain processing. Because this site itself collects essentially nothing, most requests will concern information you shared by contacting us directly — and we honor reasonable requests regardless of jurisdiction. See also the <a href="' + url('/do-not-sell/') + '">Do Not Sell or Share</a> page.',
+      'Depending on where you live (including under the Oregon Consumer Privacy Act and the California Consumer Privacy Act as amended), you may have rights to access, correct, or delete personal information and to opt out of certain processing. Most requests will concern information you sent through a form or shared by contacting us directly — and we honor reasonable requests regardless of jurisdiction. See also the <a href="' + url('/do-not-sell/') + '">Do Not Sell or Share</a> page.',
       `To make a request: email <a href="mailto:${AGENT.email}">${AGENT.email}</a> or call/text ${AGENT.phone}.`] },
     { h: 'Children', body: [
-      'This site is not directed to children and knowingly collects no information from anyone, children included.'] },
+      'This site is not directed to children and does not knowingly collect information from anyone under 16.'] },
     { h: 'Changes', body: [
-      'If site functionality ever changes in ways that affect privacy (for example, adding analytics or a contact form), this policy will be updated first and the effective date revised.'] },
+      'If site functionality changes in ways that affect privacy (for example, adding analytics), this policy will be updated first and the effective date revised.'] },
   ])
 
   legalPage({

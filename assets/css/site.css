@@ -519,3 +519,11 @@ table.facts td .sub { display: block; font-size: .82rem; color: var(--ink-faint)
 .pf-done .lede, .pf-done p { color: rgba(238, 243, 227, .8); }
 .pf-done .steps > li::before { background: var(--green); color: var(--green-ink); }
 .pf-done .btn-ghost { color: #e8eedd; }
+
+/* ---------- lead forms (lead.js) ---------- */
+.pf-hint { margin: -.4rem 0 0; font-family: var(--font-ui); font-size: .8rem; color: var(--ink-faint); }
+.band-note { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(1.4rem, 4vw, 3rem); align-items: start; margin-top: clamp(1.4rem, 3vw, 2rem); }
+@media (max-width: 880px) { .band-note { grid-template-columns: 1fr; } }
+.band-note-intro p { color: var(--ink-soft); }
+.band-ink .pocket-form { color: var(--ink); }
+.band-ink .pf-intro .lede, .band-ink .pf-points li span { color: rgba(238, 243, 227, .78); }
