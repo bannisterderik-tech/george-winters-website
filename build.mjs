@@ -738,8 +738,8 @@ function buildGuideDownloads() {
       cover: '/assets/img/guides/buyer-guide-cover.jpg',
       name: 'McKenzie River Valley Buyer Guide, Fall 2026',
       title: 'Free McKenzie River Valley Buyer Guide | George Winters',
-      description: 'Buying up river, start to keys: a free 22-page guide to buying on the McKenzie corridor. Wells, septic, flood zones, access, rural loans and the whole Oregon process. From George Winters, The Operative Group at Real Broker.',
-      kicker: 'Free guide · 22 pages',
+      description: 'Buying up river, start to keys: a free 23-page guide to buying on the McKenzie corridor. Wells, septic, flood zones, access, rural loans and the whole Oregon process. From George Winters, The Operative Group at Real Broker.',
+      kicker: 'Free guide · 23 pages',
       h1: 'Buying up river, start to keys.',
       lede: 'Everything I walk my own buyers through, in the order it happens, with the river and rural checks that catch people out up here.',
       points: [
