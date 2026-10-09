@@ -23,6 +23,9 @@
     }
 
     function finish() {
+      // A guide form is a trade: they gave an address, they get the file now.
+      // The done panel keeps a button for browsers that block the new tab.
+      if (form.dataset.guideFile) { try { window.open(form.dataset.guideFile, '_blank', 'noopener') } catch (err) {} }
       form.hidden = true
       done.hidden = false
       done.scrollIntoView({ behavior: 'smooth', block: 'center' })
@@ -41,6 +44,7 @@
       var email = v('email')
       var phone = v('phone')
       if (!v('first_name')) return fail('Please add your first name.')
+      if (form.dataset.lead === 'guide' && !email) return fail('Please add your email so the guide has somewhere to go.')
       if (!email && !phone) return fail('Please leave an email or a phone number so George can reach you.')
       if (email && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return fail('That email address does not look right.')
       if (phone && digits(phone).length < 10) return fail('Please enter the phone number with its area code.')

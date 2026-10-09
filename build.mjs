@@ -393,6 +393,7 @@ ${leadSection('buyer', {
     points: ['No drip campaign. You hear from me when something fits.', 'Nothing here commits you to anything.', 'Already working with another broker? Say so and I will stay out of it.'],
   }, null, 'band band-tint')}
 ${related([
+    { href: '/buyer-guide/', label: 'The free buyer guide (PDF)' },
     { href: '/guides/buying/', label: 'All buying guides' },
     { href: '/guides/first-time/', label: 'First-time buyer guides' },
     { href: '/guides/riverfront/', label: 'Riverfront & flood guides' },
@@ -434,6 +435,7 @@ ${leadSection('valuation', {
     points: ['Priced standing on the property, not by an algorithm.', 'You get the number whether or not you list with me.', 'Your details are never sold or handed to a lead vendor.'],
   }, null, 'band band-tint')}
 ${related([
+    { href: '/seller-guide/', label: 'The free seller guide (PDF)' },
     { href: '/guides/selling/', label: 'All selling guides' },
     { href: '/guides/selling/pricing-rural-property/', label: 'Pricing rural property' },
     { href: '/guides/selling/why-online-estimates-miss/', label: 'Why online estimates miss' },
@@ -722,10 +724,81 @@ fs.rmSync(OUT, { recursive: true, force: true })
 fs.mkdirSync(OUT, { recursive: true })
 // static assets
 fs.cpSync('assets', path.join(OUT, 'assets'), { recursive: true })
+// ============================================================ GUIDE DOWNLOADS
+// The two printed guides, each behind a short sign-up: name and email, phone
+// optional with the call-and-text box, and the PDF opens on send. The leads
+// land in his Follow Up Boss through george-fub-lead (form kind "guide"). His
+// Instagram keyword automations send people here. A page is only built when
+// its PDF is in assets/guides/, so a missing file is a missing page, not a 404.
+function buildGuideDownloads() {
+  const GUIDE_PAGES = [
+    {
+      path: '/buyer-guide/', crumb: 'Buyer guide',
+      file: '/assets/guides/mckenzie-valley-buyer-guide-2026.pdf',
+      cover: '/assets/img/guides/buyer-guide-cover.jpg',
+      name: 'McKenzie River Valley Buyer Guide, Fall 2026',
+      title: 'Free McKenzie River Valley Buyer Guide | George Winters',
+      description: 'Buying up river, start to keys: a free 22-page guide to buying on the McKenzie corridor. Wells, septic, flood zones, access, rural loans and the whole Oregon process. From George Winters, The Operative Group at Real Broker.',
+      kicker: 'Free guide · 22 pages',
+      h1: 'Buying up river, start to keys.',
+      lede: 'Everything I walk my own buyers through, in the order it happens, with the river and rural checks that catch people out up here.',
+      points: [
+        '<strong>The money.</strong> Pre-approval, the full budget, and the loans that work for rural and river property, including USDA and the Oregon Bond loan.',
+        '<strong>The ground.</strong> Flood zones and insurance, setbacks, wells and the state well test, septic, water rights, private roads and wildfire.',
+        '<strong>The deal.</strong> Writing the offer, the seller’s disclosure, inspections, the appraisal with few comps, and closing without wire fraud.',
+      ],
+    },
+    {
+      path: '/seller-guide/', crumb: 'Seller guide',
+      file: '/assets/guides/mckenzie-valley-seller-guide-2026.pdf',
+      cover: '/assets/img/guides/seller-guide-cover.jpg',
+      name: 'McKenzie River Valley Seller Guide, Fall 2026',
+      title: 'Free McKenzie River Valley Seller Guide | George Winters',
+      description: 'Sell with confidence, not hope: a free 26-page guide to selling on the McKenzie corridor. Pricing from the ground, the records file, the Oregon disclosure, river and rural questions, offers and net proceeds. From George Winters.',
+      kicker: 'Free guide · 26 pages',
+      h1: 'Sell with confidence, not hope.',
+      lede: 'How I price, prepare and sell homes on the corridor, and the records that let a river or rural property answer a buyer’s questions before they ask.',
+      points: [
+        '<strong>The number.</strong> Pricing from the ground, the four prices worth knowing, and why the algorithm never stood on your bank.',
+        '<strong>The file.</strong> Well log, septic records, flood zone, water rights, permits and road agreements, gathered before the sign goes up.',
+        '<strong>The sale.</strong> Photos and launch, comparing offers, inspection requests, the appraisal, and what actually lands in your account.',
+      ],
+    },
+  ]
+  for (const g of GUIDE_PAGES) {
+    if (!fs.existsSync(g.file.slice(1))) continue
+    const page = { path: g.path, title: g.title, description: g.description, img: g.cover, bandForm: false }
+    emit(page.path, shell(page, `
+${crumbs([{ label: g.crumb }])}
+<div class="wrap page-head">
+  <span class="kicker">${esc(g.kicker)}</span>
+  <h1>${esc(g.h1)}</h1>
+  <p class="lede">${esc(g.lede)}</p>
+</div>
+<section class="band" style="padding-top:0"><div class="wrap split">
+  <div class="prose">
+    ${checksList(g.points)}
+    <p>Written by me for the McKenzie Valley, Springfield to McKenzie Bridge. Keep it, write in it, and <a href="${AGENT.phoneHref}">text me at ${AGENT.phone}</a> when a page raises a question.</p>
+  </div>
+  <figure class="hero-photo">
+    <img src="${url(g.cover)}" alt="The cover of the ${esc(g.name)}" width="935" height="1210" loading="lazy">
+    <figcaption class="tag">${esc(g.kicker.replace('Free guide · ', ''))} · PDF</figcaption>
+  </figure>
+</div></section>
+${leadSection('guide', {
+      kicker: 'Get the guide',
+      heading: 'Where should I send it?',
+      lede: 'Your name and email, and the guide opens right away. Your phone is optional.',
+      points: ['It opens the moment you send.', 'No spam, and never sold or handed to a lead vendor.', 'A real person reads these: me.'],
+    }, { name: g.name, file: url(g.file) }, 'band band-tint')}`, [crumbSchema([{ label: g.crumb }])]))
+  }
+}
+
 buildHome()
 buildAreas()
 buildGuides()
 buildCore()
+buildGuideDownloads()
 buildLegal()
 buildListings(emit)
 buildPocket(emit)

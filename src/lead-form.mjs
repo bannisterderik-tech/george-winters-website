@@ -7,6 +7,8 @@
 //   valuation — /sell/ and the home page: what is my place worth
 //   buyer     — /buy/: what they are hunting for
 //   note      — the band at the foot of every other page: a quick note
+//   guide     — /buyer-guide/ and /seller-guide/: the sign-up in front of a PDF;
+//               email required, phone optional, and the file opens on send
 //
 // The off-market list at /pocket/ keeps its own form and pocket.js, because
 // it also writes the consent record to pocket_signups.
@@ -37,6 +39,11 @@ const contactRow = `<div class="pf-row">
         ${field('Phone', '<input type="tel" name="phone" autocomplete="tel" maxlength="30" inputmode="tel">')}
       </div>
       <p class="pf-hint">An email or a phone number, whichever you would rather hear back on.</p>`
+// A guide goes to an inbox, so the email is the one thing it needs.
+const guideContactRow = `<div class="pf-row">
+        ${field('Email', '<input type="email" name="email" autocomplete="email" required maxlength="160" inputmode="email">', true)}
+        ${field('Phone (optional)', '<input type="tel" name="phone" autocomplete="tel" maxlength="30" inputmode="tel">')}
+      </div>`
 const message = (label, ph) =>
   field(label, `<textarea name="message" rows="3" maxlength="2000" placeholder="${esc(ph)}"></textarea>`)
 const opts = (list) => list.map((o) => `<option>${esc(o)}</option>`).join('')
@@ -77,6 +84,10 @@ const FIELDS = {
   note: () => `${nameRow}
       ${contactRow}
       ${message('What can I help with?', 'Buying, selling, or a question about the valley.')}`,
+
+  guide: (g) => `${nameRow}
+      ${guideContactRow}
+      <input type="hidden" name="guide" value="${esc(g.name)}">`,
 }
 
 const BUTTON = {
@@ -85,6 +96,7 @@ const BUTTON = {
   valuation: 'Get my number',
   buyer: 'Start my search',
   note: 'Send to George',
+  guide: 'Send me the guide',
 }
 
 const DONE = {
@@ -93,11 +105,14 @@ const DONE = {
   valuation: ['Got it — I will run the numbers.', 'I will pull the comps and the county records, then reach out to walk the place. A real number takes a visit; it is free and there is no obligation.'],
   buyer: ['Got it — the hunt is on.', 'I will reach out to go over what you told me, then send what fits, including what has not hit the portals yet.'],
   note: ['Got it — I will be in touch.', 'I read these myself. Expect a reply from me, usually the same day.'],
+  guide: ['Here it is.', 'Your guide is opening in a new tab. If it did not, tap the button below. Keep it, write in it, and text me when a page raises a question.'],
 }
 
 export function leadForm(kind, listing = null) {
   const [doneH, doneP] = DONE[kind]
-  return `<form class="pocket-form lead-form" data-lead="${kind}" data-endpoint="${POCKET.fubUrl}" novalidate>
+  // For a guide, `listing` is { name, file }: the file opens the moment it sends.
+  const guideFile = kind === 'guide' ? listing.file : ''
+  return `<form class="pocket-form lead-form" data-lead="${kind}" data-endpoint="${POCKET.fubUrl}"${guideFile ? ` data-guide-file="${esc(guideFile)}"` : ''} novalidate>
       ${FIELDS[kind](listing)}
       <label class="pf-check">
         <input type="checkbox" name="sms_consent" value="1">
@@ -114,7 +129,8 @@ export function leadForm(kind, listing = null) {
       <h2>${esc(doneH)}</h2>
       <p class="lede">${esc(doneP)}</p>
       <div class="btn-row">
-        <a class="btn btn-solid" href="${AGENT.bookUrl}" rel="noopener">Book a time instead of waiting</a>
+        ${guideFile ? `<a class="btn btn-solid" href="${esc(guideFile)}" target="_blank" rel="noopener">Open the guide</a>`
+          : `<a class="btn btn-solid" href="${AGENT.bookUrl}" rel="noopener">Book a time instead of waiting</a>`}
         <a class="btn btn-ghost" href="${AGENT.phoneHref}">Call ${esc(AGENT.phone)} now</a>
       </div>
     </div>`
