@@ -50,7 +50,7 @@ export const LISTINGS = [
     neighborhood: 'Shangri-La, Deerhorn',
     mls: '588766290',
     mlsArea: '239 — Lane Co: Thurston',
-    price: 519000,
+    price: 500000,
     beds: 3,
     baths: 2,
     sqft: 1572,
@@ -73,6 +73,7 @@ export const LISTINGS = [
     ],
 
     highlights: [
+      ['Open house Sunday', 'October 11, 12–2pm'],
       ['One level, no stairs', 'All three bedrooms and both full baths on the main floor'],
       ['Two tax lots', '0.24 ac + 0.41 ac conveying together — 0.65 acres total'],
       ['Updated kitchen', 'Quartz counters, refreshed cabinetry, all appliances included'],
@@ -116,8 +117,8 @@ export const LISTINGS = [
         ['Internet', 'Cable and DSL available'],
       ]],
       ['Financial & legal', [
-        ['List price', '$519,000'],
-        ['Price per sq ft', '$330'],
+        ['List price', '$500,000'],
+        ['Price per sq ft', '$318'],
         ['Property taxes', '$3,906 (2025)'],
         ['HOA', 'None'],
         ['County', 'Lane County'],
