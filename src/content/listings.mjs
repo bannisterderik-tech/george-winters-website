@@ -50,7 +50,7 @@ export const LISTINGS = [
     neighborhood: 'Shangri-La, Deerhorn',
     mls: '588766290',
     mlsArea: '239 — Lane Co: Thurston',
-    price: 500000,
+    price: 499999,
     beds: 3,
     baths: 2,
     sqft: 1572,
@@ -117,7 +117,7 @@ export const LISTINGS = [
         ['Internet', 'Cable and DSL available'],
       ]],
       ['Financial & legal', [
-        ['List price', '$500,000'],
+        ['List price', '$499,999'],
         ['Price per sq ft', '$318'],
         ['Property taxes', '$3,906 (2025)'],
         ['HOA', 'None'],
