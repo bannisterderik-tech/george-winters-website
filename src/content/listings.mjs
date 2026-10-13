@@ -503,7 +503,7 @@ export const LISTINGS = [
     area: null,                      // outside the corridor — no area guide
     neighborhood: 'Davis Heights',
     mls: '660749986',
-    price: 484600,
+    price: 479900,
     beds: 3,
     baths: 2,
     sqft: 1660,
