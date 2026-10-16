@@ -10,6 +10,10 @@ import { AREAS } from './content/areas.mjs'
 const PHOTO_DIR = 'assets/img/listings'
 
 export const isPublic = (l) => PUBLIC_STATUSES.includes(l.status)
+// Pocket listings are live pages shared by direct link only: never on the
+// /listings/ index, in "other listings", in the sitemap, or in search.
+export const isListed = (l) => isPublic(l) && !l.pocket
+const chipLabel = (l) => l.pocket && isPublic(l) ? 'Private listing' : (STATUS_LABEL[l.status] || l.status)
 
 const money = (n) => n == null ? null : '$' + n.toLocaleString('en-US')
 const num = (n) => n == null ? null : n.toLocaleString('en-US')
@@ -61,7 +65,7 @@ const showingCtas = (l) => {
 function heroSection(l, photos) {
   const hero = photos[0]
   const stats = statFor(l).map(([k, v]) => `<div class="lstat"><span class="n">${esc(v)}</span><span class="k">${esc(k)}</span></div>`).join('')
-  const chip = `<span class="lchip s-${l.status}">${esc(STATUS_LABEL[l.status] || l.status)}</span>`
+  const chip = `<span class="lchip s-${l.status}">${esc(chipLabel(l))}</span>`
   const figure = hero
     ? `<img src="${url(hero)}" alt="${esc(fullAddress(l))}, ${esc(cityLine(l))}" width="1600" height="1067" fetchpriority="high">`
     : `<div class="photo-pending"><span>Photography scheduled</span><p>Call or text and I will walk you through it before the photos post.</p></div>`
@@ -234,7 +238,7 @@ function disclosureSection(l) {
 }
 
 function otherListings(current) {
-  const others = LISTINGS.filter((l) => l.slug !== current.slug && isPublic(l))
+  const others = LISTINGS.filter((l) => l.slug !== current.slug && isListed(l))
   if (!others.length) return ''
   return `
 <section class="band"><div class="wrap">
@@ -258,7 +262,7 @@ export function card(l) {
   ].filter(Boolean).join(' · ')
   return `
 <a class="listing-card" href="${url(`/listings/${l.slug}/`)}">
-  <div class="lc-photo">${img}<span class="lchip s-${l.status}">${esc(STATUS_LABEL[l.status] || l.status)}</span></div>
+  <div class="lc-photo">${img}<span class="lchip s-${l.status}">${esc(chipLabel(l))}</span></div>
   <div class="lc-body">
     <span class="lc-price">${priceLine(l) || ''}</span>
     <h3>${esc(fullAddress(l))}</h3>
@@ -308,7 +312,7 @@ function listingSchema(l, photos) {
 
 // ── Page builders ───────────────────────────────────────────────────────────
 export function buildListings(emit) {
-  const live = LISTINGS.filter(isPublic)
+  const live = LISTINGS.filter(isListed)
 
   // Index
   const indexPage = {
@@ -367,7 +371,7 @@ ${crumbs([{ label: 'Listings', href: '/listings/' }])}
       title: `${fullAddress(l)}, ${l.city}, OR ${l.zip}${l.price ? ` — ${money(l.price)}` : ''} | George Winters`,
       description: `${fullAddress(l)}, ${cityLine(l)}${bits ? ` — ${bits}` : ''}${l.price ? `, ${money(l.price)}` : ''}. ${l.tagline}`,
       h1: fullAddress(l),
-      noindex: !isPublic(l),
+      noindex: !isListed(l),
       ogImg: photos[0] || null,
       ogAlt: `${fullAddress(l)}, ${cityLine(l)}`,
       // The showing form is this page's lead form; no second one in the footer.
@@ -419,5 +423,5 @@ function showingCtasGeneric() {
 </div>`
 }
 
-// Paths that must stay out of the sitemap (drafts are noindex previews).
-export const draftPaths = () => LISTINGS.filter((l) => !isPublic(l)).map((l) => `/listings/${l.slug}/`)
+// Paths that must stay out of the sitemap (drafts and pocket listings are noindex).
+export const draftPaths = () => LISTINGS.filter((l) => !isListed(l)).map((l) => `/listings/${l.slug}/`)

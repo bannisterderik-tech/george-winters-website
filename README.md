@@ -25,3 +25,8 @@ New listings start as `status: 'draft'`: the page builds for review but is
 `noindex`, kept out of the sitemap, hidden from the listings index, and carries
 a red PREVIEW banner. A non-draft listing with no photos fails the build.
 Statuses: `draft` · `coming-soon` · `active` · `pending` · `sold`.
+
+**Pocket listings** — add `pocket: true` to a listing. The page goes live at
+`/listings/<slug>/` for George to share by link, but is `noindex`, out of the
+sitemap, and never shown on `/listings/` or in the other-listings grids.
+Remove the flag to take it public.

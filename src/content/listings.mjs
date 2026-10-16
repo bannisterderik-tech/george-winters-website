@@ -22,6 +22,13 @@
 //   'pending'     public, indexed, pending banner, form still live.
 //   'sold'        public, indexed, kept as an SEO asset. Set soldPrice/soldDate.
 //
+// POCKET LISTINGS
+//   Add  pocket: true  to keep a listing off the market-facing site. The page
+//   still builds at /listings/<slug>/ with its status (normally 'active') and
+//   the showing form, but it is noindex, left out of the sitemap, the /listings/
+//   index and every "other listings" grid, and its chip reads "Private listing".
+//   George shares the URL directly. Delete the flag to take it public.
+//
 // PHOTOS
 //   Drop files in  assets/img/listings/<slug>/  named so a plain sort puts
 //   them in tour order — the order someone would walk the property:
@@ -873,6 +880,74 @@ export const LISTINGS = [
     ],
     listedBy: 'Daniel Gandee & George Winters, Real Broker LLC',
     verify: ['The tax figure against the Lane County assessor', 'Site dimensions', 'Resort rules on rig size, occupancy and rentals', 'Current price and status'],
+  },
+  {
+    // POCKET LISTING — shared by direct link only (see POCKET LISTINGS above).
+    // Price, beds, baths and square feet confirmed by Derik 2026-10-16. Photos
+    // from George's Drive folder. Lot, ownership, taxes and systems are still
+    // unconfirmed and read "Ask" on the page — fill them in when George sends them.
+    slug: '56483-mckenzie-hwy-4',
+    status: 'active',
+    pocket: true,
+    address: '56483 McKenzie Highway',
+    unit: '#4',
+    city: 'McKenzie Bridge',
+    state: 'OR',
+    zip: '97413',
+    county: 'Lane County',
+    area: 'mckenzie-bridge',
+    mls: null,
+    price: 450000,
+    beds: 2, baths: 2, sqft: 971, acres: null, yearBuilt: null,
+    propertyType: null,
+
+    kicker: 'McKenzie Bridge · Private listing',
+    tagline: 'A two-bedroom cedar-shingle cottage on the upper McKenzie, offered privately before it ever reaches the MLS.',
+
+    description: [
+      'This one is not on the open market. George is offering it quietly to buyers he works with, so you are seeing it before the portals do — if they ever do.',
+      'It is a cedar-shingle cottage of 971 square feet with two bedrooms and two bathrooms. Inside it is knotty pine throughout, with a river-rock fireplace in the vaulted living room, an open kitchen and dining area, and a bedroom on the main floor plus a second bedroom upstairs under the eaves.',
+      'French doors open to a big screened porch looking into the trees. Outside are landscaped beds and a paved drive, and the McKenzie runs close by.',
+      'The lot, how unit #4 is owned, taxes, and the water, septic and heat details are not written up yet. Call or text George and he will walk you through all of it and set a time to see it.',
+    ],
+
+    highlights: [
+      ['2 bed · 2 bath', '971 square feet'],
+      ['River-rock fireplace', 'In the vaulted, knotty-pine living room'],
+      ['Screened porch', 'Through French doors off the living room'],
+      ['Off-market', 'Shared privately — not on the MLS'],
+    ],
+
+    factGroups: [
+      ['The home', [
+        ['Bedrooms', '2'],
+        ['Bathrooms', '2'],
+        ['Square feet', '971'],
+        ['Year built', 'Ask'],
+      ]],
+      ['Land & ownership', [
+        ['Unit', '#4'],
+        ['Ownership type', 'Ask'],
+        ['Lot size', 'Ask'],
+        ['HOA / shared costs', 'Ask'],
+      ]],
+      ['Financial & legal', [
+        ['Price', '$450,000'],
+        ['County', 'Lane County'],
+        ['Property taxes', 'Verify with Lane County'],
+        ['Listing', 'Private — not on the MLS'],
+      ]],
+    ],
+
+    panel: null,
+    features: null,
+    schools: [
+      ['Elementary', 'McKenzie River Community School', 'McKenzie SD 68'],
+      ['Middle', 'McKenzie River Community School', 'McKenzie SD 68'],
+      ['High', 'McKenzie High School', 'McKenzie SD 68'],
+    ],
+    listedBy: 'Daniel Gandee & George Winters, Real Broker LLC',
+    verify: ['Year built', 'Lot size and ownership type of unit #4', 'Taxes and HOA or shared-road costs', 'Water, septic, heat', 'Whether Daniel Gandee co-lists it'],
   },
 ]
 
